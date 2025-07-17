@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=helvetica:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+
+.helvetica {
+  font-family: "helvetica", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+
+/* Import Geist fonts using local font files */
+
+/* Geist Thin */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Geist Extra Light */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Geist Light */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Geist Regular */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Geist Medium */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Geist Semi Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Geist Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Geist Extra Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Geist Black */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Utility classes for Geist font */
+.geist-font {
+  font-family: 'Geist' !important;
+}
+
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Rg Cond.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Rg Cram.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: ultra-condensed;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Rg It.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Hv Comp.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+/* Class to apply Coolvetica font */
+.coolvetia-font {
+  font-family: 'Coolvetica', Arial, sans-serif;
+}
+
+.coolvetica-condensed {
+  font-family: 'Coolvetica', Arial, sans-serif;
+  font-stretch: condensed;
+  font-style: italic
+}
+
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+  
+
+
+
+/* Helvetica Neue Font Faces */
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueBlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueHeavy.otf') format('opentype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueHeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueItalic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueMediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueThin.otf') format('opentype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueThinItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueUltraLight.otf') format('opentype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/Helvicta/HelveticaNeueUltraLightItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Helvetica Utility Class */
+.helvetica {
+  font-family: 'HelveticaNeue', sans-serif;
+}
+
+
+body {
+  background-color: #ffffff !important; /* Light gray background */
+}
+
+.amazingbg {
+  background: linear-gradient(180deg, #ffffff00, #e0e0e04a), #f8f8f8;
+  box-shadow: inset 0 0 12px #cccaca1a;
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
