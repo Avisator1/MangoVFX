@@ -5,7 +5,7 @@ import three from '../assets/images/hero/3.JPG'
 
 const Images = () => {
   return (
-    <div className="relative max-w-[110rem] mx-auto overflow-hidden bg-white">
+    <div className="relative max-w-[115rem] mx-auto overflow-hidden bg-white">
       <div className="flex justify-center gap-6 ">
         <div className="-ml-[400px] w-[900px] h-[500px] flex-shrink-0
                          border border-gray-200  overflow-hidden relative">

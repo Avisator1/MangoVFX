@@ -3,7 +3,7 @@ import { FaXTwitter, FaFacebookF, FaDribbble, FaLinkedinIn, FaInstagram } from '
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1e1e1e] text-white py-20 px-6 md:px-12 lg:px-24 max-w-[110rem] mx-auto mb-10 mt-20 helvetica">
+    <footer className="bg-[#1e1e1e] text-white py-20 px-4 max-w-[115rem] mx-auto mb-10 mt-20 helvetica">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <p className="text-lg text-neutral-400 mb-2">Let’s</p>

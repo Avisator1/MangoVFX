@@ -9,13 +9,15 @@ import Footer from '../components/Footer'
 
 function Home() {
   return (
-    <div className=''>
+    <div>
         <Navbar />
-        <Hero />
-        <GallerySection />
-        <Process />
-        <FeaturedWork />
-        <Footer />
+        <div className='px-4'>
+          <Hero />
+          <GallerySection />
+          <Process />
+          <FeaturedWork />
+          <Footer />
+        </div>
 
     </div>
   )

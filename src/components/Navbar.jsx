@@ -1,21 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
-  return (
-    <nav className="w-full border-b border-[#dddddd]">
-      <div className="max-w-[110rem] helvetica mx-auto px-6 py-4 bg-white flex items-center justify-between">
-        {/* Left: Logo */}
-        <div className="font-semibold text-lg coolvetia-font text-black">JM</div>
+  const [isOpen, setIsOpen] = useState(false);
 
-        {/* Center: Nav Links */}
-        <div className="flex space-x-8 helvetica font-[450] text-sm text-black">
-          <a href="#service" className="hover:underline">Service</a>
-          <a href="#work" className="hover:underline">Work</a>
-          <a href="#contact" className="hover:underline">Contact</a>
+  return (
+    <nav className="w-full max-w-[115rem]">
+      <div className='fixed w-full bg-white/10 z-[999999] px-4'>
+        {/* Main Navbar Container */}
+        <div className="max-w-[115rem] helvetica mx-auto py-4 flex items-center justify-between">
+          {/* Left: Logo */}
+          <div className="font-semibold text-lg coolvetia-font text-black">JM</div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8 helvetica font-[450] text-sm text-black">
+            <a href="#service" className="hover:underline">Service</a>
+            <a href="#work" className="hover:underline">Work</a>
+            <a href="#contact" className="hover:underline">Contact</a>
+          </div>
+
+          {/* Phone Number */}
+          <div className="hidden md:block text-sm text-black">+1 (678) 333-8925</div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-black focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
 
-        {/* Right: Phone Number */}
-        <div className="text-sm text-black">+1 (678) 333-8925</div>
+        {/* Mobile Menu - Now flush with navbar */}
+        <div className={`md:hidden bg-white/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+          <div className="px-4 pb-6 flex flex-col space-y-6 helvetica font-[450] text-sm text-black">
+            <a 
+              href="#service" 
+              className="hover:underline pt-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Service
+            </a>
+            <a 
+              href="#work" 
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              Work
+            </a>
+            <a 
+              href="#contact" 
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+            <div className="text-sm text-black pt-4 border-t border-gray-200">
+              +1 (678) 333-8925
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   );
