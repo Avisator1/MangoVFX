@@ -4,16 +4,16 @@ import { FaXTwitter, FaDribbble, FaInstagram } from 'react-icons/fa6'
 import { SlSocialFacebook } from "react-icons/sl";
 import { FiLinkedin } from "react-icons/fi";
 import one from '../assets/images/hero/1.JPG'
+import { ScreenFitText } from './ScreenToText';
 
 function Hero() {
   return (
-      <div className="bg-white mx-auto max-w-[115rem] items-center justify-center">
+    <div className="bg-white mx-auto max-w-[115rem] items-center justify-center">
       
-      <div className="">
-        <h1 className="text-[clamp(70px,17vw,330px)]  leading-none font-[400] coolvetia-font  px-0 text-center pt-10">
-        JOE MCDAVID
-      </h1>
-
+      <div className="pt-10">
+        <ScreenFitText>
+          JOE MCDAVID
+        </ScreenFitText>
       </div>
 
       {/* IMAGE + BIO */}

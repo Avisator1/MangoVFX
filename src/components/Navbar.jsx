@@ -6,32 +6,32 @@ const Navbar = () => {
 
   return (
     <nav className="w-full max-w-[115rem]">
-      <div className='fixed w-full bg-white/10 z-[999999] px-4'>
+      <div className="fixed w-full bg-white/10 z-[999999] px-4">
         {/* Main Navbar Container */}
-        <div className="max-w-[115rem] helvetica mx-auto py-4 flex items-center justify-between">
+        <div className="max-w-[115rem] helvetica mx-auto h-20 flex items-center justify-between">
           {/* Left: Logo */}
           <div className="font-semibold text-lg coolvetia-font text-black">JM</div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 helvetica font-[450] text-sm text-black">
+          <div className="hidden md:flex space-x-8 helvetica font-[450] text-sm text-black items-center">
             <a href="#service" className="hover:underline">Service</a>
             <a href="#work" className="hover:underline">Work</a>
             <a href="#contact" className="hover:underline">Contact</a>
           </div>
 
           {/* Phone Number */}
-          <div className="hidden md:block text-sm text-black">+1 (678) 333-8925</div>
+          <div className="hidden md:flex items-center text-sm text-black">+1 (678) 333-8925</div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-black focus:outline-none"
+            className="md:hidden text-black focus:outline-none flex items-center"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu - Now flush with navbar */}
+        {/* Mobile Menu */}
         <div className={`md:hidden bg-white/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
           <div className="px-4 pb-6 flex flex-col space-y-6 helvetica font-[450] text-sm text-black">
             <a 
