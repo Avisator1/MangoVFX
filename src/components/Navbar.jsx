@@ -6,25 +6,25 @@ const Navbar = () => {
 
   return (
     <nav className="w-full max-w-[115rem]">
-      <div className="fixed w-full bg-white/10 z-[999999] px-4">
+      <div className="fixed w-full px-4 z-[999999] mix-blend-difference transition-transform duration-500">
         {/* Main Navbar Container */}
-        <div className="max-w-[115rem] helvetica mx-auto h-20 flex items-center justify-between">
+        <div className="max-w-[115rem] coolvetia-font mx-auto h-20 flex items-center justify-between">
           {/* Left: Logo */}
-          <div className="font-semibold text-lg coolvetia-font text-black">JM</div>
+          <div className="text-[24px] coolvetia-font text-white">JM</div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 helvetica font-[450] text-sm text-black items-center">
-            <a href="#service" className="hover:underline">Service</a>
-            <a href="#work" className="hover:underline">Work</a>
-            <a href="#contact" className="hover:underline">Contact</a>
+          <div className="hidden md:flex space-x-8 coolvetia-font font-[450] text-[24px] text-white items-center">
+            <a href="#service" className="hover:underline">HOME</a>
+            <a href="#work" className="hover:underline opacity-75">WORK</a>
+            <a href="#contact" className="hover:underline opacity-75">SERVICE</a>
           </div>
 
           {/* Phone Number */}
-          <div className="hidden md:flex items-center text-sm text-black">+1 (678) 333-8925</div>
+          <div className="hidden md:flex items-center text-[24px] opacity-75 text-white">CONTACT</div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-black focus:outline-none flex items-center"
+            className="md:hidden text-white focus:outline-none flex items-center"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -33,7 +33,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className={`md:hidden bg-white/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="px-4 pb-6 flex flex-col space-y-6 helvetica font-[450] text-sm text-black">
+          <div className="px-4 pb-6 flex flex-col space-y-6 coolvetia-font font-[450] text-sm text-black">
             <a 
               href="#service" 
               className="hover:underline pt-2"

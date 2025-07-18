@@ -16,10 +16,10 @@ const images = [
 
 const FeaturedWork = () => {
   return (
-    <div className="flex flex-col lg:flex-row text-[#111] helvetica mt-20 max-w-[115rem] mx-auto px-4 lg:px-0">
+    <div className="flex flex-col lg:flex-row text-[#111] coolvetia-font mt-20 max-w-[115rem] mx-auto px-4 lg:px-0">
       {/* Sidebar */}
       <div className="w-full lg:w-[35%] lg:sticky top-0 h-fit self-start mb-10 lg:mb-0">
-        <div className="max-w-[40rem] helvetica">
+        <div className="max-w-[40rem] coolvetia-font">
           <img src={deco} className="h-5 w-5 mb-10" alt="Decoration" />
           <p className="text-sm uppercase tracking-wide text-gray-500 mb-5">
             Joe's Featured Work

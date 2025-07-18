@@ -6,7 +6,7 @@ import horse from '../assets/images/tysh/horse.JPG';
 const GallerySection = () => {
   return (
     <div className="text-[#fff] mt-[clamp(2rem,5vw,5rem)]">
-      <div className="max-w-[115rem] mx-auto bg-[#1e1e1e] helvetica py-[clamp(1rem,3vw,1.5rem)] px-4">
+      <div className="max-w-[115rem] mx-auto bg-[#1e1e1e] coolvetia-font py-[clamp(1rem,3vw,1.5rem)] px-4">
         {/* Top Section - unchanged */}
         <div className="flex flex-col lg:flex-row justify-between p-[clamp(1rem,3vw,3rem)]">
           {/* Left Text - unchanged */}

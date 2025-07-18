@@ -5,19 +5,18 @@ export const ScreenFitText = ({ children }) => {
   const textRef = useRef(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+    const text = textRef.current;
+    if (!container || !text) return;
+
     const resizeText = () => {
-      const container = containerRef.current;
-      const text = textRef.current;
-
-      if (!container || !text) return;
-
       const containerWidth = container.offsetWidth;
       let min = 1;
       let max = 2500;
 
       while (min <= max) {
         const mid = Math.floor((min + max) / 2);
-        text.style.fontSize = mid + "px";
+        text.style.fontSize = `${mid}px`;
 
         if (text.offsetWidth <= containerWidth) {
           min = mid + 1;
@@ -26,21 +25,30 @@ export const ScreenFitText = ({ children }) => {
         }
       }
 
-      text.style.fontSize = max + "px";
+      text.style.fontSize = `${max}px`;
     };
 
-    resizeText();
+    requestAnimationFrame(() => {
+      resizeText();
+    });
+
+    const observer = new ResizeObserver(resizeText);
+    observer.observe(container);
     window.addEventListener("resize", resizeText);
-    return () => window.removeEventListener("resize", resizeText);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", resizeText);
+    };
   }, []);
 
   return (
     <div
-      className="w-full flex justify-center px-4 overflow-hidden"
+      className="w-full mx-auto flex justify-center px-4 overflow-hidden"
       ref={containerRef}
     >
       <span
-        className="whitespace-nowrap font-[400] coolvetia-font text-center text-slate-900 leading-none"
+        className="whitespace-nowrap inline-block font-[400] coolvetia-font text-center text-white mix-blend-difference leading-none"
         ref={textRef}
       >
         {children}

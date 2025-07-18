@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 function Process() {
   return (
-    <div className='max-w-[115rem] mx-auto helvetica mt-[clamp(2rem,5vw,7rem)] '>
+    <div className='max-w-[115rem] mx-auto coolvetia-font mt-[clamp(2rem,5vw,7rem)] '>
       {/* Header section */}
       <img src={deco} className='w-[clamp(16px,1.25vw,20px)] h-[clamp(16px,1.25vw,20px)] mb-[clamp(2rem,3vw,2.5rem)]' alt="Decoration" />
       <p className="text-[clamp(0.75rem,1vw,0.875rem)] uppercase tracking-wide text-gray-500 mb-[clamp(1rem,2vw,1.25rem)]">JOES PROCESS</p>
@@ -17,7 +17,7 @@ function Process() {
             Refining <span className='libre-baskerville-regular-italic'>Beauty</span> in Every Detail
           </h1>
         </div>
-        <p className='max-w-xl text-gray-800 text-[clamp(0.875rem,1.5vw,1.125rem)] leading-relaxed helvetica mt-6 md:mt-0'>
+        <p className='max-w-xl text-gray-800 text-[clamp(0.875rem,1.5vw,1.125rem)] leading-relaxed coolvetia-font mt-6 md:mt-0'>
           Joe's editing process is where creativity meets precision.
         </p>
       </div>
@@ -30,7 +30,7 @@ function Process() {
               <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] coolvetia-font font-[450]">{step}</h3>
               <span className="text-gray-400 text-xl"><FaArrowRight /></span>
             </div>
-            <p className="text-gray-600 mt-4 helvetica text-[clamp(0.875rem,1.5vw,1rem)]">
+            <p className="text-gray-600 mt-4 coolvetia-font text-[clamp(0.875rem,1.5vw,1rem)]">
               {step === '01. Capture' && 'Raw moments captured with technical expertise.'}
               {step === '02. Refine' && 'Meticulous color grading and adjustments.'}
               {step === '03. Deliver' && 'Final artwork delivered in multiple formats.'}

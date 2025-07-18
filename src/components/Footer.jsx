@@ -1,42 +1,54 @@
-import React from 'react';
-import { FaXTwitter, FaFacebookF, FaDribbble, FaLinkedinIn, FaInstagram } from 'react-icons/fa6';
+import React from "react";
+import logo from "../assets/images/footer/shiny.png";
+import _ from "../assets/images/footer/_.png"
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-[#1e1e1e] text-white py-20 px-4 max-w-[115rem] mx-auto mb-10 mt-20 helvetica">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <p className="text-lg text-neutral-400 mb-2">Let’s</p>
-        <h2 className="text-5xl md:text-9xl text-white/90 leading-tight coolvetia-font">
-          <span className="">Get in </span>
-          <span className="libre-baskerville-regular-italic text-white">touch</span>
-        </h2>
-
-        {/* Email */}
-        <div className="mt-8">
-          <p className="text-xl md:text-2xl border-b border-neutral-600 inline-block pb-1">hello@joemcdavid.com</p>
-        </div>
-
-        {/* Socials */}
-        <div className="mt-10 flex gap-4 text-neutral-300">
-          <FaXTwitter className="text-xl hover:text-white cursor-pointer" />
-          <FaFacebookF className="text-xl hover:text-white cursor-pointer" />
-          <FaDribbble className="text-xl hover:text-white cursor-pointer" />
-          <FaLinkedinIn className="text-xl hover:text-white cursor-pointer" />
-          <FaInstagram className="text-xl hover:text-white cursor-pointer" />
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-20 border-t border-neutral-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 space-y-4 md:space-y-0">
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Service</a>
-            <a href="#" className="hover:text-white">Work</a>
-            <a href="#" className="hover:text-white">Contact</a>
+    <footer className="bg-[#111111] text-white max-w-[115rem] mx-auto mb-20 mt-20">
+      {/* Top Section */}
+      <div className="pt-12 relative z-10 px-8">
+        <div className="flex flex-col items-start gap-6 coolvetia-font" style={{ fontSize: 'clamp(2rem, 6vw, 64px)' }}>
+          {/* Let's Work and Email */}
+          <div>
+            <h2 className="mb-2">Let’s Work</h2>
+            <a
+              href="mailto:hello@joemcdavid.com"
+              className="hover:underline block"
+              style={{ fontSize: 'clamp(1rem, 2.5vw, 65px)' }}
+            >
+              Hello@joemcdavid.com
+            </a>
           </div>
-          <div className="text-white font-semibold">Joe McDavid</div>
-          <div>+1 (555) 123-4567</div>
+
+          {/* Links Section now underneath */}
+          <div
+            className="grid grid-cols-2 gap-x-16 gap-y-4 mt-6"
+            style={{ fontSize: 'clamp(0.85rem, 1.5vw, 14px)' }}
+          >
+            <div className="flex flex-col space-y-2">
+              <a href="#" className="hover:underline">Home</a>
+              <a href="#" className="hover:underline">Work</a>
+              <a href="#" className="hover:underline">Services</a>
+              <a href="#" className="hover:underline">Contact</a>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <a href="#" className="hover:underline">Instagram</a>
+              <a href="#" className="hover:underline">Linkedin</a>
+              <a href="#" className="hover:underline">Dribble</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Bottom Infinite Scrolling Text */}
+      <div className="relative overflow-hidden text-white w-full h-[15vw] flex items-center">
+        <div className="absolute top-0 left-0 whitespace-nowrap animate-infinite-scroll leading-none font-[400] coolvetia-font" style={{ fontSize: '15vw' }}>
+          {"JOE MCDAVID  ".repeat(50)}
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
