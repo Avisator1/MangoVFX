@@ -1,26 +1,53 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import Images from '../components/Images'
-import GallerySection from '../components/Gallery'
-import Process from '../components/Process'
-import FeaturedWork from '../components/FeaturedWork'
-import Footer from '../components/Footer'
+import React, { useState, useEffect } from 'react';
+import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
+import Preloader from '../components/PreLoader';
+import Process from '../components/Scroll';
+import Statistics from '../components/Stats';
+import Testimonials from '../components/Testimonials';
+import Footer from '../components/Footer';
 
 function Home() {
-  return (
-    <div>
-        <Navbar />
-        <div className='px-4'>
-          <Hero />
-          <GallerySection />
-          <Process />
-          <FeaturedWork />
-          <Footer />
-        </div>
+  const [loading, setLoading] = useState(true);
+  const [animate, setAnimate] = useState(false);
 
-    </div>
-  )
+  useEffect(() => {
+    if (!loading) {
+      // Trigger animation after preloader fades out
+      const timer = setTimeout(() => {
+        setAnimate(true);
+      }, 100); // small delay so the preloader fully disappears
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
+
+  return (
+    <>
+      {loading && <Preloader onFinish={() => setLoading(false)} />}
+
+      {!loading && (
+        <div
+          className={`transition-opacity duration-700 ${
+            animate ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+
+          <div>
+          <div className=" mx-auto bg-white">
+            <Navbar />
+            <Hero />
+          </div>
+          <Process />
+          <Statistics />
+          <Testimonials />
+          
+          <Footer />
+          </div>
+      
+        </div>
+      )}
+    </>
+  );
 }
 
-export default Home
+export default Home;

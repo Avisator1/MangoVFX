@@ -2,66 +2,77 @@ import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full max-w-[115rem]">
-      <div className="fixed w-full px-4 z-[999999] mix-blend-difference transition-transform duration-500">
-        {/* Main Navbar Container */}
-        <div className="max-w-[115rem] coolvetia-font mx-auto h-20 flex items-center justify-between">
-          {/* Left: Logo */}
-          <div className="text-[24px] coolvetia-font text-white">JM</div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 coolvetia-font font-[450] text-[24px] text-white items-center">
-            <a href="#service" className="hover:underline">HOME</a>
-            <a href="#work" className="hover:underline opacity-75">WORK</a>
-            <a href="#contact" className="hover:underline opacity-75">SERVICE</a>
+    <div className="fixed top-0 left-0 w-full z-50  neue">
+      <nav className="max-w-[112rem] mx-auto px-4">
+        {/* Header with Logo and Button - Always visible */}
+        <div className="flex items-center justify-between py-6 relative z-[60]">
+          <div className="text-2xl font-semibold tracking-wide text-black">
+            MANGOFX
           </div>
 
-          {/* Phone Number */}
-          <div className="hidden md:flex items-center text-[24px] opacity-75 text-white">CONTACT</div>
+          {/* Desktop Nav Links - UNTOUCHED */}
+          <div className="hidden md:flex items-center gap-8 font-[500] text-black text-md uppercase">
+            <a href="/" className="hover:underline">HOME</a>
+            <a href="/work" className="hover:underline">WORK</a>
+            <a href="/shop" className="hover:underline">SHOP</a>
+            <a href="#" className="font-bold underline flex items-center gap-1 ml-20">
+              <span className="-rotate-45 inline-block">↘</span> Contact
+            </a>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-white focus:outline-none flex items-center"
-            onClick={() => setIsOpen(!isOpen)}
+          {/* Mobile Menu Button - Always visible */}
+          <button
+            className="md:hidden text-black text-2xl z-[60]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
           >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden bg-white/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="px-4 pb-6 flex flex-col space-y-6 coolvetia-font font-[450] text-sm text-black">
-            <a 
-              href="#service" 
-              className="hover:underline pt-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Service
-            </a>
-            <a 
-              href="#work" 
-              className="hover:underline"
-              onClick={() => setIsOpen(false)}
-            >
-              Work
-            </a>
-            <a 
-              href="#contact" 
-              className="hover:underline"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
-            <div className="text-sm text-black pt-4 border-t border-gray-200">
-              +1 (678) 333-8925
+        {/* Mobile Menu Overlay - Appears below header */}
+        {menuOpen && (
+          <div className="fixed inset-0 bg-white z-50 pt-32 px-6 flex flex-col">
+            <div className="border-t border-black/10 pt-6">
+              <a 
+                href="/" 
+                className="block py-4 text-2xl uppercase hover:underline"
+                onClick={() => setMenuOpen(false)}
+              >
+                HOME
+              </a>
+              <a 
+                href="/work" 
+                className="block py-4 text-2xl uppercase hover:underline"
+                onClick={() => setMenuOpen(false)}
+              >
+                WORK
+              </a>
+              <a 
+                href="/shop" 
+                className="block py-4 text-2xl uppercase hover:underline"
+                onClick={() => setMenuOpen(false)}
+              >
+                SHOP
+              </a>
+            </div>
+            
+            <div className="mt-auto pb-12">
+              <a 
+                href="#" 
+                className="font-bold text-2xl uppercase underline flex items-center gap-2 py-4"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="-rotate-45 inline-block">↘</span> CONTACT
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </nav>
+        )}
+      </nav>
+    </div>
   );
 };
 
