@@ -35,18 +35,19 @@ function Hero() {
   }, []);
 
   useEffect(() => {
+    if (isMobile || isTablet) return;
+
     const MAX_SCALE = 2.5;
     const MAX_SCROLL = isMobile ? windowHeight * 0.5 : windowHeight * 3;
+
 
     const handleScroll = () => {
       const y = window.scrollY;
       setScrollY(y);
 
-      if (!isMobile) {
-        const progress = Math.min(y / MAX_SCROLL, 1);
-        const clampedScale = 1 + progress * (MAX_SCALE - 1);
-        setScale(clampedScale);
-      }
+      const progress = Math.min(y / MAX_SCROLL, 1);
+      const clampedScale = 1 + progress * (MAX_SCALE - 1);
+      setScale(clampedScale);
 
       if (textSectionRef.current) {
         const rect = textSectionRef.current.getBoundingClientRect();
@@ -63,11 +64,8 @@ function Hero() {
           isSticky = true;
           animationStarted = true;
 
-          const scrollProgressRaw = 1 - rect.bottom / (viewportHeight + rect.height);
-          const scrollProgress = Math.min(Math.max(scrollProgressRaw, 0), 1);
-          const textSectionHeight = rect.height;
           const scrolledThrough = viewportHeight - rect.top;
-          const sectionProgress = Math.min(scrolledThrough / textSectionHeight, 1);
+          const sectionProgress = Math.min(scrolledThrough / rect.height, 1);
           const progressPerWord = 1 / words.length;
 
           newOpacities = words.map((_, index) => {
@@ -108,9 +106,9 @@ function Hero() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [windowHeight, isMobile, words.length]);
+  }, [windowHeight, isMobile, isTablet, words.length]);
 
-  const fadeOutStart = isMobile ? windowHeight * 1.5 : windowHeight * 4;
+  const fadeOutStart = (isMobile || isTablet) ? windowHeight * 1.5 : windowHeight * 4;
 
   return (
     <>
@@ -118,7 +116,7 @@ function Hero() {
       <div className="">
         <div
           className={`max-w-[112rem] mx-auto px-4 ${
-            isMobile ? "relative h-screen" : "fixed inset-0"
+            isMobile || isTablet ? "relative h-screen" : "fixed inset-0"
           } bg-white z-10 overflow-hidden flex items-center justify-center`}
           style={{
             opacity: scrollY > fadeOutStart ? 0 : 1,
@@ -126,7 +124,7 @@ function Hero() {
             pointerEvents: scrollY > fadeOutStart ? "none" : "auto",
           }}
         >
-          {isMobile ? (
+          {(isMobile || isTablet) ? (
             <div className="w-full h-full flex flex-col items-center justify-center px-4">
               <h1 className="text-[15vw] neue font-[500] leading-none tracking-tight mb-4">
                 MANGO
@@ -140,47 +138,38 @@ function Hero() {
             </div>
           ) : (
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* Container for image and text positioning */}
               <div className="relative flex items-center justify-center">
-                {/* Image */}
-                <div
-                  className="relative"
-                  style={{
-                    width: isTablet ? "500px" : "min(40vw, 800px)",
-                    height: isTablet ? "281px" : "min(22.5vw, 450px)", // 16:9 aspect ratio
-                    transform: `scale(${scale})`,
-                    transformOrigin: "center center",
-                    transition: "transform 75ms ease-out, opacity 300ms ease",
-                    opacity: scrollY > fadeOutStart ? 0 : 1,
-                    zIndex: 20,
-                  }}
-                >
-                  <img src={mango} alt="Visual" className="w-full h-full object-cover" />
-                </div>
-
-                {/* MANGO text - positioned relative to image */}
+                     {/* Image with fixed size */}
+              <div
+                className="relative"
+                style={{
+                  width: "650px",
+                  height: "365px", // 16:9 aspect ratio
+                  transform: `scale(${scale})`,
+                  transformOrigin: "center center",
+                  transition: "transform 75ms ease-out, opacity 300ms ease",
+                  opacity: scrollY > fadeOutStart ? 0 : 1,
+                  zIndex: 20,
+                }}
+              >
+                <img src={mango} alt="Visual" className="w-full h-full object-cover" />
+              </div>
                 <h1
-                  className={`absolute neue font-[500] leading-none tracking-tight ${
-                    isTablet ? "text-[160px]" : "text-[min(12vw,300px)]"
-                  }`}
+                  className="absolute neue font-[500] leading-none tracking-tight text-[min(11vw,300px)]"
                   style={{
-                    top: "-25%", // moved down a bit from -35%
-                    right: "45%", // end of MANGO text aligns with just past the image center
+                    top: "-30%",
+                    right: "35%",
                     transform: "translateY(-50%)",
                     zIndex: 10,
                   }}
                 >
                   MANGO
                 </h1>
-
-                {/* EFFECTS text - positioned relative to image */}
                 <h2
-                  className={`absolute neue font-[500] leading-none tracking-tight ${
-                    isTablet ? "text-[160px]" : "text-[min(12vw,300px)]"
-                  }`}
+                  className="absolute neue font-[500] leading-none tracking-tight text-[min(11vw,300px)]"
                   style={{
-                    bottom: "-25%", // moved up a bit from -35%
-                    left: "45%", // start of EFFECTS text aligns with just past the image center
+                    bottom: "-30%",
+                    left: "35%",
                     transform: "translateY(50%)",
                     zIndex: 10,
                   }}
@@ -193,7 +182,7 @@ function Hero() {
         </div>
       </div>
 
-      {!isMobile && <div className="relative z-0 h-[400vh] bg-white"></div>}
+      {!isMobile && !isTablet && <div className="relative z-0 h-[400vh] bg-white"></div>}
 
       {/* Text Reveal Section */}
       <div
@@ -203,7 +192,7 @@ function Hero() {
           position: animation.isSticky ? "sticky" : "relative",
           top: 0,
           zIndex: 20,
-          opacity: animation.sectionVisible ? 1 : 0,
+          opacity: animation.sectionVisible || isMobile || isTablet ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}
       >
@@ -217,7 +206,10 @@ function Hero() {
                     key={index}
                     className="transition-all duration-300 text-white inline-block neue font-[500]"
                     style={{
-                      color: `rgba(255,255,255,${animation.wordOpacities[index] ?? 0.3})`,
+                      color:
+                        isMobile || isTablet
+                          ? `rgba(255,255,255,1)`
+                          : `rgba(255,255,255,${animation.wordOpacities[index] ?? 0.3})`,
                     }}
                   >
                     {word}{" "}
