@@ -6,6 +6,7 @@ function Hero() {
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
   const textSectionRef = useRef(null);
   const [animation, setAnimation] = useState({
     isSticky: false,
@@ -13,11 +14,9 @@ function Hero() {
     animationStarted: false,
     sectionVisible: false
   });
-  
-  // Create ref for animation state
+
   const animationRef = useRef(animation);
-  
-  // Sync ref with animation state
+
   useEffect(() => {
     animationRef.current = animation;
   }, [animation]);
@@ -29,6 +28,7 @@ function Hero() {
     const handleResize = () => {
       setWindowHeight(window.innerHeight);
       setIsMobile(window.innerWidth < 768);
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -51,7 +51,6 @@ function Hero() {
       if (textSectionRef.current) {
         const rect = textSectionRef.current.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
-
         const sectionInView = rect.top < viewportHeight && rect.bottom > 0;
 
         let newOpacities = [...animationRef.current.wordOpacities];
@@ -64,49 +63,33 @@ function Hero() {
           isSticky = true;
           animationStarted = true;
 
-          // NEW: SIMPLIFIED AND RELIABLE SCROLL PROGRESS CALCULATION
           const scrollProgressRaw = 1 - rect.bottom / (viewportHeight + rect.height);
           const scrollProgress = Math.min(Math.max(scrollProgressRaw, 0), 1);
-
-          // NEW: FIXED WORD OPACITY CALCULATION
-          // Calculate the total height of the text section
           const textSectionHeight = rect.height;
-          
-          // Calculate how much of the section has been scrolled through
           const scrolledThrough = viewportHeight - rect.top;
-          
-          // Calculate percentage of section scrolled through
           const sectionProgress = Math.min(scrolledThrough / textSectionHeight, 1);
-          
-          // NEW: PROGRESS PER WORD
           const progressPerWord = 1 / words.length;
-          
+
           newOpacities = words.map((_, index) => {
-            // Calculate the start and end points for each word
             const wordStart = index * progressPerWord;
             const wordEnd = (index + 1) * progressPerWord;
-            
+
             if (sectionProgress >= wordEnd) {
-              return 1; // Word fully visible
+              return 1;
             } else if (sectionProgress >= wordStart) {
-              // Calculate progress within this word's range
               const wordProgress = (sectionProgress - wordStart) / progressPerWord;
               return 0.3 + 0.7 * wordProgress;
             } else {
-              return 0.3; // Word not yet visible
+              return 0.3;
             }
           });
         } else if (rect.bottom < 0) {
-          // Check if all words are fully visible
           const allWordsVisible = newOpacities.every(opacity => opacity >= 1);
-          
           if (allWordsVisible) {
-            // Animation complete - release section
             isSticky = false;
             animationStarted = false;
             sectionVisible = false;
           } else {
-            // Force complete animation and keep section sticky
             newOpacities = Array(words.length).fill(1);
             isSticky = true;
             animationStarted = true;
@@ -133,82 +116,95 @@ function Hero() {
     <>
       {/* Hero Section */}
       <div className="">
-      <div
-        className={`max-w-[112rem] mx-auto px-4  ${
-          isMobile ? "relative h-screen" : "fixed inset-0"
-        } bg-white z-10 overflow-hidden flex items-center justify-center`}
-        style={{
-          opacity: scrollY > fadeOutStart ? 0 : 1,
-          transition: "opacity 300ms ease",
-          pointerEvents: scrollY > fadeOutStart ? "none" : "auto",
-        }}
-      >
-        {!isMobile ? (
-          <>
-            <div className="absolute top-1/2 left-4 -translate-y-1/2 text-md font-medium neue z-10">
-              A CREATIVE <strong>THUMBNAIL DESIGNER</strong>
+        <div
+          className={`max-w-[112rem] mx-auto px-4 ${
+            isMobile ? "relative h-screen" : "fixed inset-0"
+          } bg-white z-10 overflow-hidden flex items-center justify-center`}
+          style={{
+            opacity: scrollY > fadeOutStart ? 0 : 1,
+            transition: "opacity 300ms ease",
+            pointerEvents: scrollY > fadeOutStart ? "none" : "auto",
+          }}
+        >
+          {isMobile ? (
+            <div className="w-full h-full flex flex-col items-center justify-center px-4">
+              <h1 className="text-[15vw] neue font-[500] leading-none tracking-tight mb-4">
+                MANGO
+              </h1>
+              <div className="w-full max-w-[400px] aspect-[16/9] my-4">
+                <img src={mango} alt="Visual" className="w-full h-full object-cover" />
+              </div>
+              <h2 className="text-[15vw] neue font-[500] leading-none tracking-tight mt-4">
+                EFFECTS
+              </h2>
             </div>
+          ) : (
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Container for image and text positioning */}
+              <div className="relative flex items-center justify-center">
+                {/* Image */}
+                <div
+                  className="relative"
+                  style={{
+                    width: isTablet ? "500px" : "min(40vw, 800px)",
+                    height: isTablet ? "281px" : "min(22.5vw, 450px)", // 16:9 aspect ratio
+                    transform: `scale(${scale})`,
+                    transformOrigin: "center center",
+                    transition: "transform 75ms ease-out, opacity 300ms ease",
+                    opacity: scrollY > fadeOutStart ? 0 : 1,
+                    zIndex: 20,
+                  }}
+                >
+                  <img src={mango} alt="Visual" className="w-full h-full object-cover" />
+                </div>
 
-            <div className="absolute top-1/2 right-4 -translate-y-1/2 text-md font-medium neue z-10 text-right">
-              INCREASING VIEWS <strong>DRAMATICALLY</strong>
+                {/* MANGO text - positioned relative to image */}
+                <h1
+                  className={`absolute neue font-[500] leading-none tracking-tight ${
+                    isTablet ? "text-[160px]" : "text-[min(12vw,300px)]"
+                  }`}
+                  style={{
+                    top: "-25%", // moved down a bit from -35%
+                    right: "45%", // end of MANGO text aligns with just past the image center
+                    transform: "translateY(-50%)",
+                    zIndex: 10,
+                  }}
+                >
+                  MANGO
+                </h1>
+
+                {/* EFFECTS text - positioned relative to image */}
+                <h2
+                  className={`absolute neue font-[500] leading-none tracking-tight ${
+                    isTablet ? "text-[160px]" : "text-[min(12vw,300px)]"
+                  }`}
+                  style={{
+                    bottom: "-25%", // moved up a bit from -35%
+                    left: "45%", // start of EFFECTS text aligns with just past the image center
+                    transform: "translateY(50%)",
+                    zIndex: 10,
+                  }}
+                >
+                  EFFECTS
+                </h2>
+              </div>
             </div>
-
-            <h1 className="absolute top-[5%] left-[6%] text-[12vw] neue font-[500] leading-none tracking-tight z-10">
-              MANGO
-            </h1>
-
-            <div
-              className="absolute z-20 pointer-events-none overflow-hidden"
-              style={{
-                width: "40vw",
-                maxWidth: "650px",
-                aspectRatio: "16 / 9",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                transform: `scale(${scale})`,
-                transformOrigin: "center center",
-                transition: "transform 75ms ease-out, opacity 300ms ease",
-                opacity: scrollY > fadeOutStart ? 0 : 1,
-              }}
-            >
-              <img src={mango} alt="Visual" className="w-full h-full object-cover" />
-            </div>
-
-            <h2 className="absolute bottom-[5%] right-[6%] text-[12vw] neue font-[500] leading-none tracking-tight text-right z-10">
-              EFFECTS
-            </h2>
-          </>
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center px-4">
-            <h1 className="text-[15vw] neue font-[500] leading-none tracking-tight mb-4">
-              MANGO
-            </h1>
-
-            <div className="w-full max-w-[400px] aspect-[16/9] my-4">
-              <img src={mango} alt="Visual" className="w-full h-full object-cover" />
-            </div>
-
-            <h2 className="text-[15vw] neue font-[500] leading-none tracking-tight mt-4">
-              EFFECTS
-            </h2>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
       </div>
 
       {!isMobile && <div className="relative z-0 h-[400vh] bg-white"></div>}
 
-      {/* Text reveal section */}
-      <div 
+      {/* Text Reveal Section */}
+      <div
         className="text-reveal-section bg-white"
         ref={textSectionRef}
         style={{
-          position: animation.isSticky ? 'sticky' : 'relative',
+          position: animation.isSticky ? "sticky" : "relative",
           top: 0,
           zIndex: 20,
           opacity: animation.sectionVisible ? 1 : 0,
-          transition: 'opacity 0.3s ease'
+          transition: "opacity 0.3s ease",
         }}
       >
         <div className="w-full min-h-screen bg-black flex justify-between items-center px-4 md:px-8">
@@ -220,8 +216,8 @@ function Hero() {
                   <span
                     key={index}
                     className="transition-all duration-300 text-white inline-block neue font-[500]"
-                    style={{ 
-                      color: `rgba(255,255,255,${animation.wordOpacities[index] ?? 0.3})`
+                    style={{
+                      color: `rgba(255,255,255,${animation.wordOpacities[index] ?? 0.3})`,
                     }}
                   >
                     {word}{" "}
@@ -235,17 +231,9 @@ function Hero() {
                 CONTACT ME
               </a>
             </div>
-
-
-            
           </div>
-
-          
         </div>
       </div>
-
-      
-      
     </>
   );
 }
