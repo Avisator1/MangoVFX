@@ -22,7 +22,7 @@ function Hero() {
   }, [animation]);
 
   const words =
-    "I'M A US-BASED GRAPHICS DESIGNER WITH EXTENSIVE EXPERIENCE IN MINECRAFT DESIGNS AND HAVE COMPLETED OVER 250 ORDERS.".split(" ");
+    "I DESIGN VISUALS THAT DEMAND ATTENTION. Every project is built to spark curiosity and fuel growth for creators to stand out.".split(" ");
 
   useEffect(() => {
     const handleResize = () => {
@@ -115,7 +115,7 @@ function Hero() {
       {/* Hero Section */}
       <div className="">
         <div
-          className={`max-w-[112rem] mx-auto px-4 ${
+          className={`max-w-[112rem] mt-18 mx-auto px-4 ${
             isMobile || isTablet ? "relative h-screen" : "fixed inset-0"
           } bg-white z-10 overflow-hidden flex items-center justify-center`}
           style={{
@@ -186,7 +186,7 @@ function Hero() {
 
       {/* Text Reveal Section */}
       <div
-        className="text-reveal-section bg-white"
+        className="text-reveal-section uppercase bg-white"
         ref={textSectionRef}
         style={{
           position: animation.isSticky ? "sticky" : "relative",

@@ -6,6 +6,9 @@ import Process from '../components/Scroll';
 import Statistics from '../components/Stats';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
+import Clients from '../components/Clients';
+import PatreonPromo from '../components/Pateron';
+import StorePromo from '../components/StorePromo';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -38,8 +41,11 @@ function Home() {
             <Hero />
           </div>
           <Process />
+          <Clients />
           <Statistics />
           <Testimonials />
+          <PatreonPromo />
+          <StorePromo />
           
           <Footer />
           </div>

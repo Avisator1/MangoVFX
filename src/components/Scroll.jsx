@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Process = () => {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [hoveredStep, setHoveredStep] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Example images for each step (replace with your actual image paths)
+  const stepImages = [
+    "/images/color-correction-example.jpg",
+    "/images/shading-depth-example.jpg",
+    "/images/lighting-example.jpg",
+    "/images/highlights-glow-example.jpg"
+  ];
+
   const steps = [
     {
       title: "COLOR CORRECTION",
@@ -41,9 +53,42 @@ const Process = () => {
     }
   ];
 
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const handleStepClick = (index) => {
+    setSelectedImage(stepImages[index]);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (selectedImage && !e.target.closest('.image-modal-content')) {
+        closeImageModal();
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [selectedImage]);
+
   return (
     <div className='bg-black'>
-      {/* Container with proper height calculation */}
+      {/* Main container */}
       <div className="relative max-w-[112rem] mx-auto bg-black px-4 text-white min-h-[100vh] md:min-h-[400vh] z-[99999]">
         
         {/* Right column - sticky on desktop */}
@@ -56,13 +101,16 @@ const Process = () => {
           </div>
         </div>
 
-        {/* Left column - scrollable with proper spacing */}
+        {/* Left column - scrollable with steps */}
         <div className="md:absolute static top-[50vh] md:top-0 left-0 w-full md:w-1/2 pb-20 md:pb-0">
           {steps.map((step, index) => (
             <section 
-              key={index} 
-              className="min-h-[50vh] md:h-screen flex items-center pt-[5%] px-6 md:px-0"
+              key={index}
+              className="min-h-[50vh] md:h-screen flex items-center pt-[5%] px-6 md:px-0 relative group cursor-pointer"
               style={index === steps.length - 1 ? { minHeight: 'calc(50vh + 80px)' } : {}}
+              onMouseEnter={() => setHoveredStep(index)}
+              onMouseLeave={() => setHoveredStep(null)}
+              onClick={() => handleStepClick(index)}
             >
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -98,10 +146,77 @@ const Process = () => {
             </section>
           ))}
         </div>
+
+        {/* Cursor-following button */}
+        {hoveredStep !== null && (
+          <motion.div
+            className="fixed z-50 pointer-events-none mix-blend-difference"
+            style={{
+              left: cursorPosition.x,
+              top: cursorPosition.y,
+              transform: 'translate(-50%, -50%)'
+            }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ 
+              scale: 1,
+              opacity: 1,
+              transition: { type: 'spring', stiffness: 500, damping: 25 }
+            }}
+            exit={{ scale: 0.8, opacity: 0 }}
+          >
+            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white">
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-black"
+              >
+                <path 
+                  d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+          </motion.div>
+        )}
       </div>
       
       {/* Spacer to prevent overlap with next sections */}
       <div className="h-20 md:h-0 bg-black"></div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-95 z-[999999] flex items-center justify-center p-4"
+        >
+          <div className="image-modal-content relative max-w-6xl w-full">
+            <button 
+              onClick={closeImageModal}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors neue text-xl"
+            >
+              CLOSE [×]
+            </button>
+            <motion.img 
+              src={selectedImage} 
+              alt="Process example" 
+              className="w-full h-auto max-h-[80vh] object-contain"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            />
+            <div className="text-white text-center mt-6 neue text-xl md:text-2xl tracking-tight">
+              {steps[stepImages.indexOf(selectedImage)].title}
+            </div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

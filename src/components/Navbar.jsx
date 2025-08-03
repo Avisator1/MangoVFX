@@ -5,27 +5,27 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50  neue">
-      <nav className="max-w-[112rem] mx-auto px-4">
+    <div className="w-full">
+      <nav className="fixed mix-blend-difference neue backdrop-blur-md transition-transform duration-500 top-6 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] bg-white/5 rounded-md px-8 z-[999999]">
         {/* Header with Logo and Button - Always visible */}
         <div className="flex items-center justify-between py-6 relative z-[60]">
-          <div className="text-2xl font-semibold tracking-wide text-black">
+          <div className="text-2xl font-semibold tracking-wide text-white">
             MANGOFX
           </div>
 
           {/* Desktop Nav Links - UNTOUCHED */}
-          <div className="hidden md:flex items-center gap-8 font-[500] text-black text-md uppercase">
+          <div className="hidden md:flex items-center gap-8 font-[500] text-white text-sm uppercase">
             <a href="/" className="hover:underline">HOME</a>
             <a href="/work" className="hover:underline">WORK</a>
             <a href="/shop" className="hover:underline">SHOP</a>
-            <a href="#" className="font-bold underline flex items-center gap-1 ml-20">
+            <a href="#" className="font-bold underline text-sm flex items-center gap-1 ml-20">
               <span className="-rotate-45 inline-block">↘</span> Contact
             </a>
           </div>
 
           {/* Mobile Menu Button - Always visible */}
           <button
-            className="md:hidden text-black text-2xl z-[60]"
+            className="md:hidden text-white text-2xl z-[60]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >

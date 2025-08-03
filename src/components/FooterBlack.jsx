@@ -48,7 +48,7 @@ const Footer = () => {
             <p className="cursor-pointer hover:opacity-80 transition">Privacy</p>
           </div>
 
-          <p className="cursor-pointer hover:opacity-80 text-white transition">Mango Studios</p>
+          <p className="cursor-pointer hover:opacity-80 text-white transition">mangofx</p>
         </div>
       </div>
     </footer>
