@@ -1,19 +1,33 @@
-import React from 'react'
-import ThumbnailPortfolio from '../components/Thumbnail'
-import Footer from '../components/FooterBlack'
-import Navbar from '../components/Navbar'
+import React, { useState, useEffect } from 'react';
+import ThumbnailPortfolio from '../components/Thumbnail';
+import Footer from '../components/FooterBlack';
+import Navbar from '../components/Navbar';
 
 function Work() {
-  return (
-    <div>
-          <div className=" mx-auto bg-white">
-            <Navbar />
-          </div>
+  const [animate, setAnimate] = useState(false);
 
-          <ThumbnailPortfolio />
-          <Footer />
+  useEffect(() => {
+    // Trigger fade-in after a small delay
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 50); // adjust delay if needed
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div
+      className={`transition-opacity duration-700 ${
+        animate ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <div className="mx-auto bg-white">
+        <Navbar />
+      </div>
+
+      <ThumbnailPortfolio />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Work
+export default Work;
