@@ -140,20 +140,25 @@ function Hero() {
             <div className="relative w-full h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center">
                      {/* Image with fixed size */}
-              <div
-                className="relative"
-                style={{
-                  width: "650px",
-                  height: "365px", // 16:9 aspect ratio
-                  transform: `scale(${scale})`,
-                  transformOrigin: "center center",
-                  transition: "transform 75ms ease-out, opacity 300ms ease",
-                  opacity: scrollY > fadeOutStart ? 0 : 1,
-                  zIndex: 20,
-                }}
-              >
-                <img src={mango} alt="Visual" className="w-full h-full object-cover" />
-              </div>
+                     <div
+  className="relative"
+  style={{
+    width: "clamp(300px, 40vw, 550px)", // responsive width, max 650px on desktop
+    aspectRatio: "16 / 9",              // keeps 16:9 aspect ratio
+    transform: `scale(${scale})`,
+    transformOrigin: "center center",
+    transition: "transform 75ms ease-out, opacity 300ms ease",
+    opacity: scrollY > fadeOutStart ? 0 : 1,
+    zIndex: 20,
+  }}
+>
+  <img
+    src={mango}
+    alt="Visual"
+    className="w-full h-full object-cover"
+  />
+</div>
+
                 <h1
                   className="absolute neue font-[500] leading-none tracking-tight text-[min(11vw,300px)]"
                   style={{
