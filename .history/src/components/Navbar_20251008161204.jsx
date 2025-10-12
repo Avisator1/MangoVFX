@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuItems = [
+    "Home",
+    "About",
+    "Process",
+    "Clients",
+    "Impact",
+    "Feedback",
+    "Community",
+    "Store",
+    "Socials",
+  ];
+
+  return (
+    <div className="w-full">
+      {/* Main Navbar */}
+      <nav className="fixed top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999] bg-black/80 backdrop-blur-md">
+        {/* Header */}
+        <div className="flex items-center justify-between py-5 relative z-[60]">
+          {/* Left - Logo */}
+          <div className="text-2xl font-[500] tracking-wide text-white">
+            mangofx
+          </div>
+
+          {/* Center - Subtitle */}
+          <div className="hidden md:block text-md font-[500] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
+            Thumbnail Designer
+          </div>
+
+          {/* Right - Links */}
+          <div className="hidden md:flex items-center gap-8 font-[500] text-white text-sm tracking-wide">
+            <a href="/" className="hover:underline">
+              Home
+            </a>
+            <a href="/work" className="hover:underline">
+              Work
+            </a>
+            <a href="/shop" className="hover:underline">
+              Shop
+            </a>
+            <a href="#" className="hover:underline">
+              Contact
+            </a>
+            <button
+              className="text-white text-sm hover:underline"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle Menu"
+            >
+              Menu
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-white text-2xl z-[60]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Fullscreen Overlay Menu - SEPARATE from main nav */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-black z-[999998] flex flex-col">
+          {/* Top Bar */}
+          <div className="flex items-center justify-between px-8 py-5 border-b border-gray-800">
+            <div className="text-2xl font-[500] text-white">mangofx</div>
+            <button
+              className="text-white text-2xl hover:text-gray-300 transition-colors"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close Menu"
+            >
+              <FiX size={28} />
+            </button>
+          </div>
+
+          {/* Menu Links - Centered */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="w-full max-w-4xl px-8">
+              {menuItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className="block text-4xl md:text-6xl lg:text-7xl font-[400] py-4 text-white hover:text-gray-300 transition-colors duration-300 text-left font-sans"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;

@@ -1,0 +1,216 @@
+import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const menuItems = [
+    "Home",
+    "About",
+    "Process",
+    "Clients",
+    "Impact",
+    "Feedback",
+    "Community",
+    "Store",
+    "Socials",
+  ];
+
+  const handleCloseMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setIsClosing(false);
+    }, 500);
+  };
+
+  const handleOpenMenu = () => {
+    setMenuOpen(true);
+    setIsClosing(false);
+  };
+
+  return (
+    <div className="w-full neue">
+      {/* Main Navbar */}
+      <nav className="fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-50">
+        {/* Header */}
+        <div className="flex items-center justify-between py-5 relative">
+          {/* Left - Logo */}
+          <div className={`text-2xl font-[500] tracking-wide text-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}>
+            mangofx
+          </div>
+
+          {/* Center - Subtitle - Hidden when menu open */}
+          <div className={`hidden md:block text-md font-[500] tracking-wide text-white absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}>
+            Thumbnail Designer
+          </div>
+
+          {/* Right - Links - Hidden when menu open */}
+          <div className={`hidden md:flex items-center gap-8 font-[500] text-white text-sm tracking-wide transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}>
+            <a href="/" className="hover:underline">
+              Home
+            </a>
+            <a href="/work" className="hover:underline">
+              Work
+            </a>
+            <a href="/shop" className="hover:underline">
+              Shop
+            </a>
+            <a href="#" className="hover:underline">
+              Contact
+            </a>
+            <button
+              className="text-white text-sm hover:underline"
+              onClick={handleOpenMenu}
+              aria-label="Toggle Menu"
+            >
+              Menu
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-white text-2xl"
+            onClick={menuOpen ? handleCloseMenu : handleOpenMenu}
+            aria-label="Toggle Menu"
+          >
+            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Fullscreen Overlay Menu */}
+      {(menuOpen || isClosing) && (
+        <div className={`fixed inset-0 z-40 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}>
+          {/* Radial Blur Background - This gets the blur */}
+          <div className={`absolute inset-0 bg-black/70 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}>
+            <div className={`absolute inset-0 backdrop-blur-3xl ${isClosing ? 'animate-radialFadeOut' : 'animate-radialFadeIn'}`}></div>
+            <div className={`absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/60 to-black/95 ${isClosing ? 'animate-radialFadeOut' : 'animate-radialFadeIn'}`}></div>
+          </div>
+          
+          {/* Content Container - NO BLUR here */}
+          <div className={`relative z-10 flex flex-col h-full ${isClosing ? 'animate-slideDown' : 'animate-slideUp'}`}>
+            {/* Top Bar - Clear and not blurred */}
+            <div className="flex items-center justify-between px-8 py-6 border-b border-gray-800/50 bg-transparent">
+              <div className="text-2xl font-[500] text-white">mangofx</div>
+              <button
+                className="text-white text-2xl hover:text-gray-300 transition-colors"
+                onClick={handleCloseMenu}
+                aria-label="Close Menu"
+              >
+                <FiX size={28} />
+              </button>
+            </div>
+
+            {/* Menu Links - Clear and not blurred */}
+            <div className="flex-1 flex items-center neue">
+              <div className="w-full max-w-6xl mx-auto px-8">
+                <div className="space-y-1">
+                  {menuItems.map((item, index) => (
+                    <div 
+                      key={index} 
+                      className="border-b border-gray-100/20 last:border-b-0"
+                    >
+                      <a
+                        href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                        className={`block text-4xl md:text-5xl lg:text-6xl xl:text-4xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 ${
+                          isClosing ? 'animate-slideOut' : 'animate-slideIn'
+                        }`}
+                        style={{ 
+                          animationDelay: isClosing 
+                            ? `${(menuItems.length - 1 - index) * 0.05}s` 
+                            : `${index * 0.1}s` 
+                        }}
+                        onClick={handleCloseMenu}
+                      >
+                        {item}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+        @keyframes radialFadeIn {
+          from { 
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to { 
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @keyframes radialFadeOut {
+          from { 
+            opacity: 1;
+            transform: scale(1);
+          }
+          to { 
+            opacity: 0;
+            transform: scale(1.2);
+          }
+        }
+        @keyframes slideUp {
+          from { transform: translateY(30px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideDown {
+          from { transform: translateY(0); opacity: 1; }
+          to { transform: translateY(30px); opacity: 0; }
+        }
+        @keyframes slideIn {
+          from { transform: translateX(-30px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+          from { transform: translateX(0); opacity: 1; }
+          to { transform: translateX(30px); opacity: 0; }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+        .animate-fadeOut {
+          animation: fadeOut 0.5s ease-out forwards;
+        }
+        .animate-radialFadeIn {
+          animation: radialFadeIn 0.7s ease-out forwards;
+        }
+        .animate-radialFadeOut {
+          animation: radialFadeOut 0.7s ease-out forwards;
+        }
+        .animate-slideUp {
+          animation: slideUp 0.6s ease-out forwards;
+        }
+        .animate-slideDown {
+          animation: slideDown 0.6s ease-out forwards;
+        }
+        .animate-slideIn {
+          animation: slideIn 0.4s ease-out forwards;
+          opacity: 0;
+          animation-fill-mode: forwards;
+        }
+        .animate-slideOut {
+          animation: slideOut 0.4s ease-out forwards;
+          animation-fill-mode: forwards;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Navbar;

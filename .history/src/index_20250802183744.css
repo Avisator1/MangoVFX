@@ -1,0 +1,82 @@
+
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('./assets/fonts/PPNeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('./assets/fonts/PPNeueMontreal-Book.woff2') format('woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('./assets/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('./assets/fonts/PPNeueMontreal-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('./assets/fonts/PPNeueMontreal-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+.neue {
+  font-family: 'PPNeueMontreal', sans-serif;
+}
+
+
+body {
+  background-color: #ffffff;
+}
+
+.marquee-outer {
+  @apply w-full overflow-hidden border-t border-black;
+}
+
+.marquee-inner {
+  @apply whitespace-nowrap;
+  font-family: 'neue', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem; /* Tailwind: text-2xl */
+  display: flex;
+}
+
+.marquee-track {
+  display: flex;
+  animation: seamless-scroll 30s linear infinite;
+}
+
+/* Duplicate content fills horizontal space so loop is seamless */
+@keyframes seamless-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.gurt {
+  color: rgba(0, 0, 0, 0);
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+body {
+  background-color: white;
+}
