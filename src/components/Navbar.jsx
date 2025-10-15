@@ -24,17 +24,17 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-3 relative z-[60]">
             {/* Left - Logo */}
-            <div className="text-2xl font-[500] tracking-wide text-white">
+            <div className="text-2xl font-[400] tracking-wide text-white">
               mangofx
             </div>
 
             {/* Center - Subtitle */}
-            <div className="hidden md:block text-md font-[500] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
+            <div className="hidden md:block text-md font-[400] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
               Thumbnail Designer
             </div>
 
             {/* Right - Links - Only Home and Menu */}
-            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-md tracking-wide">
+            <div className="hidden md:flex items-center gap-8 font-[400] text-white text-md tracking-wide">
               {/* Home still visible in the desktop header */}
               <Link
                 to="/"
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="relative z-10 flex flex-col h-full animate-slideUp">
             {/* Top Bar - Higher z-index to ensure visibility */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-gray-800/50 relative z-20">
-              <div className="text-2xl font-[500] text-white">mangofx</div>
+              <div className="text-2xl font-[400] text-white">mangofx</div>
               <button
                 className="text-white text-2xl hover:text-gray-300 transition-colors"
                 onClick={() => setMenuOpen(false)}
