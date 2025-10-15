@@ -7,7 +7,7 @@ const Navbar = () => {
   const menuItems = [
     "Home",
     "Clients",
-    "Work", 
+    "Work" 
     "Testimonials",
     "Store",
   ];
