@@ -25,9 +25,9 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-3 relative z-[60]">
             {/* Left - Logo */}
-            <a href="/" className="text-2xl font-[300] tracking-wide text-white">
+            <q className="text-2xl font-[300] tracking-wide text-white">
               mangofx
-            </a>
+            </div>
 
             {/* Center - Subtitle */}
             <div className="hidden md:block text-md font-[300] tracking-wide text-white absolute left-1/2 -translate-x-1/2">

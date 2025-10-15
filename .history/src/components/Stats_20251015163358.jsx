@@ -126,10 +126,10 @@ const Statistics = () => {
             rel="noopener noreferrer"
             whileHover={{ 
               backgroundColor: "#e1794a",
-              color: "#ffffff"
+              color: "#000000"
             }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block border-2 text-white border-[#e1794a] px-12 py-4 hover:bg-[#e1794a] rounded-full neue font-[500] text-xl transition-colors duration-100"
+            className="inline-block border-2 border-[#e1794a] px-12 py-4 hover:bg-[#e1794a] rounded-full neue font-[500] text-xl transition-colors duration-100"
           >
             VIEW YT JOBS PROFILE
           </motion.a>

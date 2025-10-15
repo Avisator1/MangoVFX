@@ -25,9 +25,9 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-3 relative z-[60]">
             {/* Left - Logo */}
-            <a href="/" className="text-2xl font-[300] tracking-wide text-white">
+            <div className="text-2xl font-[300] tracking-wide text-white">
               mangofx
-            </a>
+            </div>
 
             {/* Center - Subtitle */}
             <div className="hidden md:block text-md font-[300] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
@@ -61,23 +61,12 @@ const Navbar = () => {
               </Link>
 
               <Link
-  to="https://discord.com/users/767953235616202833"
-  smooth
-  className="group hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 flex items-center gap-2"
->
-  Contact
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 8 8"
-    className="w-3 h-3 stroke-current"
-    fill="none"
-  >
-    <path d="M7.822 0.063 L0.045 7.841" strokeWidth="0.84" />
-    <path d="M1.961 0.063 L7.823 0.063 L7.823 5.349" strokeWidth="1.64" strokeMiterlimit="10" />
-  </svg>
-</Link>
-
-
+                to="/contact"
+                smooth
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
+              >
+                Shop
+              </Link>
               <button
                 className="text-white text-md hover:bg-white hover:text-black py-2 px-4 cursor-pointer rounded-full"
                 onClick={() => setMenuOpen(!menuOpen)}

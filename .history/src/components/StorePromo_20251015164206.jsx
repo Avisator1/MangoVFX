@@ -97,10 +97,10 @@ const StorePromo = () => {
                 href="/shop"
                 whileHover={{ 
                   backgroundColor: "#e1794a",
-                  color: "#ffffff"
+                  color: "#000000"
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block border-2 border-[#e1794a] px-12 py-4 rounded-full neue font-[500] text-xl transition-colors duration-300"
+                className="inline-block border-2 border-white px-12 py-4 rounded-full neue font-[500] text-xl transition-colors duration-300"
               >
                 SHOP NOW
               </motion.a>

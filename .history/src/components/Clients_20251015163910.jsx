@@ -84,7 +84,7 @@ const Clients = () => {
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="neue bg-[#e1794a] text-white px-8 py-3 font-[500] text-[4vw] sm:text-[2.5vw] md:text-[1.1vw] uppercase tracking-wide hover:scale-105 transition rounded-xl  duration-200"
+              className="neue bg-[#e1794a] text-white px-8 py-3 font-[500] text-[4vw] sm:text-[2.5vw] md:text-[1.1vw] uppercase tracking-wide rounded-xl transition-colors duration-200"
             >
               {showAll ? 'VIEW LESS' : 'VIEW MORE (+16)'}
             </button>

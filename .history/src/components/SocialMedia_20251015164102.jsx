@@ -43,7 +43,7 @@ const SocialMediaSection = () => {
       url: "https://www.behance.net/mango_fx",
       description: "Full portfolio featuring all my work",
       icon: <FaBehance size={28} />,
-      color: "#e1794a"
+      color: "#1769FF"
     }
   ];
 
@@ -131,7 +131,7 @@ const SocialMediaSection = () => {
                 }}
               >
                 <div className="flex items-center gap-4 flex-1">
-                  <span className="text-3xl text-[#e1794a]">{social.icon}</span>
+                  <span className="text-3xl">{social.icon}</span>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
                       <p className="neue text-xl md:text-2xl font-[500]">

@@ -119,7 +119,7 @@ const ThumbnailPortfolio = () => {
           </button>
           <button
             onClick={() => setSortBy("views")}
-            className={`neue px-4 py-2 rounded-md ${sortBy === "views" ? "bg-[#e1794a] text-white" : "bg-gray-100"}`}
+            className={`neue px-4 py-2 rounded-md ${sortBy === "views" ? "bg-black text-white" : "bg-gray-100"}`}
           >
             Most Views
           </button>

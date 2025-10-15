@@ -25,7 +25,7 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-3 relative z-[60]">
             {/* Left - Logo */}
-            <a href="/" className="text-2xl font-[300] tracking-wide text-white">
+            <a className="text-2xl font-[300] tracking-wide text-white">
               mangofx
             </a>
 

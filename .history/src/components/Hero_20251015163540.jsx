@@ -205,7 +205,7 @@ function Hero() {
         <div className="w-full min-h-screen bg-black flex justify-between items-center px-4 md:px-8">
           <div className="max-w-[112rem] mx-auto w-full flex flex-col md:flex-row">
             <div className="flex-1">
-              <p className="neue text-2xl text-[#f5d6c7] font-[500]  mb-3">01. ABOUT ME</p>
+              <p className="neue text-2xl text-[#f5d6c7] font-[500] text-white mb-3">01. ABOUT ME</p>
               <p className="text-4xl md:text-6xl neue text-left text-white leading-relaxed flex flex-wrap gap-x-2 max-w-6xl">
                 {words.map((word, index) => (
                   <span
@@ -225,7 +225,7 @@ function Hero() {
             </div>
 
             <div className="self-end mb-[0.75rem] mt-8 md:mt-0">
-              <a className="bg-[#e1794a] text-white px-6 py-4 md:px-4 md:py-3 neue rounded-lg font-[500] cursor-pointer">
+              <a className="bg-white text-black px-6 py-4 md:px-4 md:py-3 neue rounded-lg font-[500] cursor-pointer">
                 CONTACT ME
               </a>
             </div>

@@ -76,7 +76,7 @@ const Statistics = () => {
         <div className="sticky top-0 pt-32 pb-16">
           <div className="flex justify-between items-start">
             <div>
-              <p className="neue text-xl text-[#f5d6c7] md:text-2xl font-[500]">03. STATISTICS</p>
+              <p className="neue text-xl md:text-2xl font-[500]">03. STATISTICS</p>
               <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight">
                 MY<br/>IMPACT
               </h1>
@@ -125,11 +125,11 @@ const Statistics = () => {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ 
-              backgroundColor: "#e1794a",
-              color: "#ffffff"
+              backgroundColor: "#ffffff",
+              color: "#000000"
             }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block border-2 text-white border-[#e1794a] px-12 py-4 hover:bg-[#e1794a] rounded-full neue font-[500] text-xl transition-colors duration-100"
+            className="inline-block border-2 border-[#e1794a] px-12 py-4 rounded-full neue font-[500] text-xl transition-colors duration-300"
           >
             VIEW YT JOBS PROFILE
           </motion.a>
