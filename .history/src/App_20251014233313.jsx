@@ -7,15 +7,7 @@ import Work from './pages/Work'
 
 const App = () => {
   return (
-    <ReactLenis
-      root
-      options={{
-        smooth: true,
-        duration: 0.6,         // shorter duration = faster response
-        wheelMultiplier: 1.5,  // increases scroll distance per wheel tick
-        smoothWheel: true,
-      }}
-    >
+    <ReactLenis root options={{ smooth: true, duration: 1.8 }}>
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
