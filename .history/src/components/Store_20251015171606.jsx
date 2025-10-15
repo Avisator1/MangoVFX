@@ -93,7 +93,7 @@ const Store = () => {
                 transition: { duration: 0.6, delay: index * 0.1 },
               }}
               viewport={{ once: true, margin: "-50px" }}
-              className={`border border-black p-8 py-12 rounded-xl hover:bg-[#e1794a] hover:text-white transition-colors duration-300 group relative ${
+              className={`border border-black p-8 rounded-xl hover:bg-[#e1794a] hover:text-white transition-colors duration-300 group relative ${
                 product.status === "coming-soon" ? "opacity-75" : ""
               }`}
             >
