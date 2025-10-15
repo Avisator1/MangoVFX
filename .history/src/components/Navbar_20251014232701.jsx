@@ -8,6 +8,7 @@ const Navbar = () => {
   // keep original UI, but use .to for HashLink
   const menuItems = [
     { name: "Home", to: "/" },
+    { name: "Design Process", to: "/#design" },
     { name: "Clients", to: "/#clients" },
     { name: "Testimonials", to: "/#testimonials" },
     { name: "Store", to: "/shop" },
