@@ -50,8 +50,8 @@ const Statistics = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
 
   const formatLabel = (val, type) => {
-    if (type === 'views') return `${Math.floor(val)}K+`;
-    if (type === 'likes') return `${Math.floor(val)}K`;
+    if (type === 'views') return `${Math.floor(val)}M+`;
+    if (type === 'likes') return `${Math.floor(val)}k+`;
     if (type === 'orders') return `${Math.floor(val)}+`;
     return `${Math.floor(val)}`;
   };
@@ -59,7 +59,7 @@ const Statistics = () => {
   const stats = [
     { value: 700, label: 'LIKES', type: 'likes', format: (v) => formatLabel(v, 'likes') },
     { value: 33, label: 'VIEWS', type: 'views', format: (v) => formatLabel(v, 'views') },
-    { value: 400, label: 'ORDERS', type: 'orders', format: (v) => formatLabel(v, 'thumbnails') },
+    { value: 400, label: 'ORDERS', type: 'orders', format: (v) => formatLabel(v, 'orders') },
   ];
 
   return (

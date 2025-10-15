@@ -57,7 +57,7 @@ const SocialMediaSection = () => {
 
   return (
     <div
-      id='socials' 
+    id='socials' 
       className="relative bg-black text-white overflow-hidden"
       ref={containerRef}
     >

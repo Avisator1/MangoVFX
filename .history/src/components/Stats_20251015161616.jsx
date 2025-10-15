@@ -51,7 +51,7 @@ const Statistics = () => {
 
   const formatLabel = (val, type) => {
     if (type === 'views') return `${Math.floor(val)}K+`;
-    if (type === 'likes') return `${Math.floor(val)}K`;
+    if (type === 'likes') return `${Math.floor(val)}k+`;
     if (type === 'orders') return `${Math.floor(val)}+`;
     return `${Math.floor(val)}`;
   };

@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: "Testimonials", to: "/#testimonials" },
     { name: "Store", to: "/shop" },
     { name: "Gallery", to: "/work" },
-    { name: "Contact", to: "/#socials" }
+    { name}
   ];
 
   const closeMenu = () => setMenuOpen(false);

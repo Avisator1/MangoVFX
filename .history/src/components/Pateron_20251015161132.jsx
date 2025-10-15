@@ -31,7 +31,7 @@ const PatreonPromo = () => {
         {/* Header section (sticky) */}
         <div className="sticky top-0 pt-32 pb-16">
           <div className="">
-            <p className="neue text-xl md:text-2xl font-[500] text-right">05. COMMUNITY</p>
+            <p className="neue text-xl md:text-2xl font-[500] text-right">06. COMMUNITY</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight text-right">
               PATREON<br/>PERKS
             </h1>
