@@ -127,13 +127,13 @@ function Hero() {
         >
           {(isMobile || isTablet) ? (
             <div className="w-full h-full flex flex-col items-center justify-center px-4">
-              <h1 className="text-[15vw] text-[#e1794a] neue font-[500]  leading-none tracking-tight mb-4">
+              <h1 className="text-[15vw] text-[e1794a] neue font-[500]  leading-none tracking-tight mb-4">
                 MANGO
               </h1>
               <div className="w-full max-w-[400px] aspect-[16/9] my-4 rounded-full overflow-hidden">
                 <img src={mango} alt="Visual" className="w-full h-full object-cover" />
               </div>
-              <h2 className="text-[15vw] text-[#e1794a] neue font-[500] leading-none tracking-tight mt-4">
+              <h2 className="text-[15vw] neue font-[500] leading-none tracking-tight mt-4">
                 EFFECTS
               </h2>
             </div>
