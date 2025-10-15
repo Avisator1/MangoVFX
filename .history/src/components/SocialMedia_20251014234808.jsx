@@ -20,6 +20,7 @@ const SocialMediaSection = () => {
       description: "DM for real-time chats, feedback, and exclusive content",
       icon: <FaDiscord size={28} />,
       color: "#5865F2",
+      onClick: () => alert("mangofx on Discord")
     },
     {
       platform: "Instagram",
