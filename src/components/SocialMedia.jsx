@@ -17,7 +17,7 @@ const SocialMediaSection = () => {
       platform: "Discord",
       handle: "@mangofx",
       url: "https://discord.com/users/767953235616202833",
-      description: "DM for real-time chats, feedback, and exclusive content",
+      description: "DM for thumbnail inquiries or general questions",
       icon: <FaDiscord size={28} />,
       color: "#5865F2",
     },
@@ -25,7 +25,7 @@ const SocialMediaSection = () => {
       platform: "Instagram",
       handle: "@actuallymangofx",
       url: "https://www.instagram.com/actuallymangofx/",
-      description: "Tutorials, behind-the-scenes, and visual effect breakdowns",
+      description: "Daily updates, quick tips, and visual effect breakdowns",
       icon: <FaInstagram size={28} />,
       color: "#E1306C"
     },
@@ -33,7 +33,7 @@ const SocialMediaSection = () => {
       platform: "Twitter",
       handle: "@realmangofx",
       url: "https://x.com/realmangofx",
-      description: "Daily updates, quick tips, and industry insights",
+      description: "Daily updates, quick tips, and visual effect breakdowns",
       icon: <FaTwitter size={28} />,
       color: "#1DA1F2"
     },
@@ -41,7 +41,7 @@ const SocialMediaSection = () => {
       platform: "Behance",
       handle: "mango_fx",
       url: "https://www.behance.net/mango_fx",
-      description: "Full project case studies and portfolio work",
+      description: "Full portfolio featuring all my work",
       icon: <FaBehance size={28} />,
       color: "#1769FF"
     }
@@ -101,7 +101,7 @@ const SocialMediaSection = () => {
                 Let's create together
               </h3>
               <p className="neue text-lg opacity-90 leading-relaxed">
-                Each platform offers unique content. Pick your favorite or follow everywhere.
+                If you'd like to commission a thumbnail, please DM me on Discord. Follow me on my socials for thumbnail-related content. 
               </p>
             </div>
           </motion.div>
