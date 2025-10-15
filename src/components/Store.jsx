@@ -74,7 +74,7 @@ const Store = () => {
             <p className="neue text-2xl font-[500] mb-3 mt-20">MY STORE</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight">
               GFX
-              <br />PACKS
+              <br />MARKET
             </h1>
           </div>
           <p className="neue text-xl md:text-2xl max-w-md text-right">
