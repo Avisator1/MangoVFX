@@ -39,14 +39,14 @@ const Navbar = () => {
               <Link
                 to="/"
                 smooth
-                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
+                className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150"
               >
                 Home
               </Link>
               <Link
                 to="/work"
                 smooth
-                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-xl transition duration-150"
               >
                 Work
               </Link>
@@ -54,12 +54,12 @@ const Navbar = () => {
               <Link
                 to="/shop"
                 smooth
-                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-xl transition duration-150"
               >
                 Shop
               </Link>
               <button
-                className="text-white text-sm hover:bg-white hover:text-black py-2 px-4 cursor-pointer rounded-full"
+                className="text-white text-sm hover:bg-white hover:text-black py-2 px-4 cursor-pointer rounded-xl"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
