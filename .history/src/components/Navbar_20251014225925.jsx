@@ -37,8 +37,11 @@ const Navbar = () => {
             <a href="/shop" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Store
               </a>
+              <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
+                Contact
+              </a>
               <button
-                className="hover:bg-white hover:text-black text-md hover:underline"
+                className="text-white text-md hover:underline"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >

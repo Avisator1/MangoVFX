@@ -38,7 +38,7 @@ const Navbar = () => {
                 Store
               </a>
               <button
-                className="hover:bg-white hover:text-black text-md hover:underline"
+                className="text-white text-md hover:underline"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
