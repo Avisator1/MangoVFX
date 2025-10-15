@@ -24,17 +24,17 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-3 relative z-[60]">
             {/* Left - Logo */}
-            <div className="text-2xl font-[400] tracking-wide text-white">
+            <div className="text-2xl font-[300] tracking-wide text-white">
               mangofx
             </div>
 
             {/* Center - Subtitle */}
-            <div className="hidden md:block text-md font-[400] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
+            <div className="hidden md:block text-md font-[300] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
               Thumbnail Designer
             </div>
 
             {/* Right - Links - Only Home and Menu */}
-            <div className="hidden md:flex items-center gap-8 font-[400] text-white text-md tracking-wide">
+            <div className="hidden md:flex items-center gap-8 font-[300] text-white text-md tracking-wide">
               {/* Home still visible in the desktop header */}
               <Link
                 to="/"
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="relative z-10 flex flex-col h-full animate-slideUp">
             {/* Top Bar - Higher z-index to ensure visibility */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-gray-800/50 relative z-20">
-              <div className="text-2xl font-[400] text-white">mangofx</div>
+              <div className="text-2xl font-[300] text-white">mangofx</div>
               <button
                 className="text-white text-2xl hover:text-gray-300 transition-colors"
                 onClick={() => setMenuOpen(false)}
@@ -118,12 +118,12 @@ const Navbar = () => {
                         to={item.to}
                         smooth
                         onClick={closeMenu}
-                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 flex-1"
+                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-[300] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 flex-1"
                       >
                         {item.name}
                       </Link>
 
-                      <span className="text-white text-xl md:text-2xl font-[400] pr-4">
+                      <span className="text-white text-xl md:text-2xl font-[300] pr-4">
                         {(index + 1).toString().padStart(2, '0')}
                       </span>
                     </div>
