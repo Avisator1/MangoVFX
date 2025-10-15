@@ -94,7 +94,7 @@ const ThumbnailPortfolio = () => {
       <div className="max-w-[112rem] mx-auto pt-20 md:pt-32 pb-16 px-4 mt-20">
         <div className="flex justify-between items-end mb-8">
           <div>
-            <p className="neue text-2xl font-[500] mb-3">04. PORTFOLIO</p>
+            <p className="neue text-2xl font-[500] mb-3">PORTFOLIO</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight">
               <span style={{ color: '#e1794a' }}>THUMBNAIL</span>
               <br />
@@ -176,19 +176,19 @@ const ThumbnailPortfolio = () => {
         {/* Stats Section */}
         <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-black pt-12">
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">250+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">400+</p>
             <p className="neue text-xl uppercase tracking-wider">Thumbnails</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">32.5M+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">35M+</p>
             <p className="neue text-xl uppercase tracking-wider">Total Views</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">12%</p>
-            <p className="neue text-xl uppercase tracking-wider">Avg. CTR Increase</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">750K+</p>
+            <p className="neue text-xl uppercase tracking-wider">Likes</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">50+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">100+</p>
             <p className="neue text-xl uppercase tracking-wider">Satisfied Clients</p>
           </div>
         </div>
