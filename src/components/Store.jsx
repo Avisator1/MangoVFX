@@ -74,7 +74,7 @@ const Store = () => {
             <p className="neue text-2xl font-[500] mb-3 mt-20">MY STORE</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight">
               GFX
-              <br />PACKS
+              <br />MARKET
             </h1>
           </div>
           <p className="neue text-xl md:text-2xl max-w-md text-right">
@@ -98,7 +98,7 @@ const Store = () => {
               }`}
             >
               {product.status === "coming-soon" && (
-                <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 neue font-[500] text-sm">
+                <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 neue font-[500] text-sm rounded-full">
                   COMING SOON
                 </div>
               )}
@@ -120,7 +120,7 @@ const Store = () => {
                   {product.price === 0 ? "FREE" : `$${product.price.toFixed(2)}`}
                 </p>
                 <button
-                  className={`bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 ${
+                  className={`bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 rounded-xl ${
                     product.status === "coming-soon"
                       ? "opacity-50 cursor-not-allowed"
                       : ""

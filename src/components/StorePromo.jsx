@@ -51,22 +51,22 @@ const StorePromo = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <h2 className="neue text-4xl md:text-6xl font-[500] tracking-tight">
-              Premium Creator Resources
+              Premium Design Resources
             </h2>
             
             <div className="pt-8 space-y-6">
               {[
                 {
-                  name: "COLOR PACK",
-                  description: "Cinematic LUTs for instant professional grading"
+                  name: "GFX PACKS",
+                  description: "Professional assets to instantly elevate your thumbnails"
                 },
                 {
-                  name: "THUMBNAIL KIT",
-                  description: "Templates that convert viewers to clicks"
+                  name: "PROJECT FILES",
+                  description: "Learn and collect assets from real thumbnails"
                 },
                 {
-                  name: "FX BUNDLE",
-                  description: "Premium effects for standout visuals"
+                  name: "FREEBIES",
+                  description: "Basic resources to get you started"
                 }
               ].map((product, i) => (
                 <div key={i} className="flex items-start border-b border-white/10 pb-6">
@@ -107,9 +107,9 @@ const StorePromo = () => {
 
               <div className="mt-8 space-y-4">
                 {[
-                  "Used by top creators",
-                  "20-35% CTR improvements",
-                  "Works with your existing tools"
+                  "Endorsed by top designers",
+                  "Seamlessly integrate with your workflow",
+                  "Built for modern thumbnail design"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
                     <span className="neue text-lg mr-2">•</span>

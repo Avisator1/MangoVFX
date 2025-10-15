@@ -58,11 +58,12 @@ const PatreonPromo = () => {
             
             <div className="pt-8 space-y-6">
               {[
-                "Early access to all new packs",
-                "Exclusive behind-the-scenes",
+                "Gain access to exclusive project files from real projects",
+                "Monthly design techniques & composition tips",
+                "Acess to 1:1 communication & guidance",
                 "Monthly design breakdowns",
-                "Direct input on future products",
                 "Private Discord community"
+                
               ].map((item, i) => (
                 <div key={i} className="flex items-start border-b border-white/10 pb-6">
                   <span className="neue text-2xl mr-4 text-white/50">0{i+1}</span>
