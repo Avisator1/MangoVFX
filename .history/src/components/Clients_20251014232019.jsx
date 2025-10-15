@@ -25,8 +25,7 @@ const Clients = () => {
     { name: "ricefarmer11", subs: 0.102, logo: "https://yt3.ggpht.com/-Y8sTK9Eig7O3myBqq1qTI601FK7UA3m_HFtHtQwpRA_cYfD4kTATTbpAhoiG7pumY9PIYUKcA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "beentaken", subs: 0.101, logo: "https://yt3.ggpht.com/LxYNmWGz0_W8sXdDb3_kkejSUb370wp9KvwwrPqgy7MmCeDZ8uVZFynuYw-J3Kac-zJ4KP4fmA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Tryhard", subs: 0.0953, logo: "https://yt3.ggpht.com/F5NUUwbvaOde0GEJD3SUaaG9GdADkf78BHeM5YpQDvh1DlkLyhxRs1wr3VZz6ZNlRpvOhvoPHkg=s176-c-k-c0x00ffffff-no-rj-mo" },
-    { name: "Jameteo", subs: 0.137, logo: "https://yt3.googleusercontent.com/ytc/AIdro_nqc2jgdJjiroNRBShgbMSpPofP0Butz_p4LstM2LBmqfA=s120-c-k-c0x00ffffff-no-rj"},
-    { name: "Render", subs: 0.531, logo: "https://yt3.googleusercontent.com/3qYIq8gC28UuT2q7kfYMhkTSosIymrY0WmiiMmCY8ktEikfJBYCbU0KC9_OBRVRmiKc521FqoQ=s120-c-k-c0x00ffffff-no-rj"},
+    { name: "Jamsteo"}
     { name: "Jooonah", subs: 0.0918, logo: "https://yt3.ggpht.com/3L5YBKzzjM3t_fEPcsJ7umkCNoQkWkUFw9piOEJDgHUV0KenVDe8JJyOzTEf_UZWILSDtVtKNUw=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Tai", subs: 0.0517, logo: "https://yt3.ggpht.com/Ed01sVs8RuxTu_5dosZphDQl502jL_PN5601kvrfWBzrtAbYugOhp0eAVbFyha7eec34T6xoNA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Laqqy", subs: 0.0279, logo: "https://yt3.ggpht.com/JxdA3tgCNYoArQcs7f8ElObU-30SUaVb8i-BXliDwR27A87ER50-uo-SQyP9MeHfoBs9biwsO30=s176-c-k-c0x00ffffff-no-rj-mo" },

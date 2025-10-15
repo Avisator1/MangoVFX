@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // ✅ Testimonials list
   const testimonials = [
     {
       name: "Sharpness",
@@ -47,12 +48,9 @@ const Testimonials = () => {
     },
   ];
 
-  // Each "page" shows 3 testimonials
-  const testimonialsPerPage = 3;
-  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
-
+  // ✅ Navigation (no looping)
   const nextSlide = () => {
-    if (currentIndex < totalPages - 1) {
+    if (currentIndex < testimonials.length - 3) {
       setCurrentIndex(prev => prev + 1);
     }
   };
@@ -63,14 +61,13 @@ const Testimonials = () => {
     }
   };
 
-  // ✅ Show only the current "page" of 3
-  const start = currentIndex * testimonialsPerPage;
-  const visibleTestimonials = testimonials.slice(start, start + testimonialsPerPage);
+  // ✅ Slice instead of wrap
+  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + 3);
 
   return (
     <div className="bg-black">
       <section className="relative bg-black text-white py-20 md:py-[10vw] max-w-[112rem] mx-auto px-6 md:px-0">
-        {/* Header */}
+        {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-[6vw]">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -98,9 +95,9 @@ const Testimonials = () => {
           </motion.span>
         </div>
 
-        {/* Slider */}
+        {/* Testimonial Slider */}
         <div className="relative">
-          {/* Navigation */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
@@ -108,24 +105,50 @@ const Testimonials = () => {
               currentIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-white/10"
             }`}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white w-8 h-8">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-white w-8 h-8"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
 
           <button
             onClick={nextSlide}
-            disabled={currentIndex === totalPages - 1}
+            disabled={currentIndex >= testimonials.length - 3}
             className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-4 focus:outline-none rounded-full transition-all ${
-              currentIndex === totalPages - 1 ? "opacity-30 cursor-not-allowed" : "hover:bg-white/10"
+              currentIndex >= testimonials.length - 3
+                ? "opacity-30 cursor-not-allowed"
+                : "hover:bg-white/10"
             }`}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white w-8 h-8">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-white w-8 h-8"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
 
-          {/* Testimonials */}
+          {/* Testimonial Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[4vw] px-10 md:px-12">
             {visibleTestimonials.map((testimonial, index) => (
               <motion.div
@@ -138,10 +161,17 @@ const Testimonials = () => {
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0 w-16 h-16 md:w-[6vw] md:h-[6vw] rounded-full overflow-hidden bg-gray-100 hover:ring-2 hover:ring-white transition-all duration-300">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" />
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="neue text-xl md:text-[1.8vw] font-[500] mb-2 md:mb-[1vw]">{testimonial.name}</h3>
+                    <h3 className="neue text-xl md:text-[1.8vw] font-[500] mb-2 md:mb-[1vw]">
+                      {testimonial.name}
+                    </h3>
                     <p className="neue text-base md:text-[1.1vw] leading-relaxed text-gray-300">
                       "{testimonial.quote}"
                     </p>
@@ -151,9 +181,9 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Dots */}
+          {/* Dots Indicator */}
           <div className="flex justify-center mt-12 md:mt-[4vw] space-x-2">
-            {Array.from({ length: totalPages }).map((_, index) => (
+            {Array.from({ length: testimonials.length - 2 }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}

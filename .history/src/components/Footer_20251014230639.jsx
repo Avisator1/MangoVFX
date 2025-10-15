@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="min-w-[120px] md:min-w-[150px] text-left md:text-right mt-4 md:mt-0">
             <p className="mb-2 md:mb-3">Home</p>
             <div className="space-y-1">
-              <a href="/work" className="cursor-pointer hover:opacity-80 transition">Work</a>
+              <a className="cursor-pointer hover:opacity-80 transition">Work</a>
             </div>
           </div>
         </div>
