@@ -65,7 +65,7 @@ const SocialMediaSection = () => {
       <div className="relative max-w-[112rem] mx-auto px-4 py-32 md:py-48 min-h-[100vh] flex flex-col justify-center z-10">
         {/* Header section */}
         <div className="mb-20">
-          <p className="neue text-xl md:text-2xl font-[500] text-right">08. CONNECT</p>
+          <p className="neue text-xl md:text-2xl font-[500] text-right">07. CONNECT</p>
           <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight text-right">
             SOCIAL<br/>MEDIA
           </h1>

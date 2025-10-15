@@ -37,10 +37,11 @@ function Home() {
         >
 
           <div>
-          <div className=" mx-auto bg-white">
+          <div className="max-w-[112rem] mx-auto bg-white">
             <Navbar />
             <Hero />
           </div>
+          <Process />
           <Clients />
           <Statistics />
           <Testimonials />

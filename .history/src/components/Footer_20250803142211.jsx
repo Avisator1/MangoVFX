@@ -37,11 +37,19 @@ const Footer = () => {
 
         {/* Bottom Row */}
         <div className="w-full py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-sm font-medium uppercase text-black/80 border-t border-gray-200">
-         
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+            <p>Over</p>
+            <p>250</p>
+            <p>Orders</p>
+            <p>Completed</p>
+          </div>
 
           <p>© 2025 Mango</p>
 
-         
+          <div className="flex gap-3 md:gap-6">
+            <p className="cursor-pointer hover:opacity-80 transition">Terms</p>
+            <p className="cursor-pointer hover:opacity-80 transition">Privacy</p>
+          </div>
 
           <p className="cursor-pointer hover:opacity-80 transition">mangofx</p>
         </div>

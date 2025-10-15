@@ -61,7 +61,7 @@ const Testimonials = () => {
             className="text-left"
           >
             <p className="neue text-lg md:text-[1.5vw] font-[500] mb-2 md:mb-[1vw]">
-              04. TESTIMONIALS
+              05. TESTIMONIALS
             </p>
             <h2 className="neue text-5xl md:text-[6vw] font-[500] leading-[0.9] tracking-tight">
               CLIENT <span className="text-gray-400">FEEDBACK</span>
@@ -76,7 +76,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="neue text-8xl md:text-[12vw] font-[500] text-white/70 leading-none tracking-tight mb-4 md:mb-0 md:mr-[2vw]"
           >
-            04
+            05
           </motion.span>
         </div>
 

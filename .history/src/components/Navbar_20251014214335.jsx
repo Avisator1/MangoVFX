@@ -34,7 +34,7 @@ const Navbar = () => {
             <a href="/work" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Work
               </a>
-            <a href="/store" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
+            <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Store
               </a>
               <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">

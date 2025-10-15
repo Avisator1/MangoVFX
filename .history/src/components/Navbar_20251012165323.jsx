@@ -16,11 +16,11 @@ const Navbar = () => {
     <div className="w-full neue">
       {/* Main Navbar - Completely hidden when menu is open */}
       {!menuOpen && (
-        <nav className="fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999]">
+        <nav className="fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-4 z-[999999]">
           {/* Header */}
           <div className="flex items-center justify-between py-5 relative z-[60]">
             {/* Left - Logo */}
-            <div className="text-xl font-[500] tracking-wide text-white">
+            <div className="text-2xl font-[500] tracking-wide text-white">
               mangofx
             </div>
 
@@ -30,18 +30,12 @@ const Navbar = () => {
             </div>
 
             {/* Right - Links */}
-            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-md tracking-wide">
-            <a href="/work" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Work
-              </a>
-            <a href="/store" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Store
-              </a>
+            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-sm tracking-wide">
               <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Contact
               </a>
               <button
-                className="text-white text-md hover:underline"
+                className="text-white text-sm hover:underline"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >

@@ -76,7 +76,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="neue text-8xl md:text-[12vw] font-[500] text-white/70 leading-none tracking-tight mb-4 md:mb-0 md:mr-[2vw]"
           >
-            04
+            05
           </motion.span>
         </div>
 

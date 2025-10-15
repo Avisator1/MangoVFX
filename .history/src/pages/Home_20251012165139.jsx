@@ -41,6 +41,7 @@ function Home() {
             <Navbar />
             <Hero />
           </div>
+          <Process />
           <Clients />
           <Statistics />
           <Testimonials />

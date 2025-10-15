@@ -38,7 +38,10 @@ const Footer = () => {
 
           <p>© 2025 Mango</p>
 
-         
+          <div className="flex gap-4 sm:gap-6 text-white">
+            <p className="cursor-pointer hover:opacity-80 transition">Terms</p>
+            <p className="cursor-pointer hover:opacity-80 transition">Privacy</p>
+          </div>
 
           <p className="cursor-pointer hover:opacity-80 text-white transition">mangofx</p>
         </div>

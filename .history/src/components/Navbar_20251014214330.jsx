@@ -31,10 +31,10 @@ const Navbar = () => {
 
             {/* Right - Links */}
             <div className="hidden md:flex items-center gap-8 font-[500] text-white text-md tracking-wide">
-            <a href="/work" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Work
+            <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
+                Store
               </a>
-            <a href="/store" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
+            <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Store
               </a>
               <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">

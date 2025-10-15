@@ -10,17 +10,18 @@ const Navbar = () => {
     "Clients", 
     "Testimonials",
     "Store",
+    "Gallery"
   ];
 
   return (
     <div className="w-full neue">
       {/* Main Navbar - Completely hidden when menu is open */}
       {!menuOpen && (
-        <nav className="fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999]">
+        <nav className="fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem]  px-8 z-[999999]">
           {/* Header */}
           <div className="flex items-center justify-between py-5 relative z-[60]">
             {/* Left - Logo */}
-            <div className="text-xl font-[500] tracking-wide text-white">
+            <div className="text-2xl font-[500] tracking-wide text-white">
               mangofx
             </div>
 
@@ -30,18 +31,12 @@ const Navbar = () => {
             </div>
 
             {/* Right - Links */}
-            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-md tracking-wide">
-            <a href="/work" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Work
-              </a>
-            <a href="/store" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Store
-              </a>
+            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-sm tracking-wide">
               <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
                 Contact
               </a>
               <button
-                className="text-white text-md hover:underline"
+                className="text-white text-sm hover:underline"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
@@ -96,7 +91,7 @@ const Navbar = () => {
                     >
                       <a
                         href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 w-full"
+                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 w-full"
                         onClick={() => setMenuOpen(false)}
                       >
                         {item}

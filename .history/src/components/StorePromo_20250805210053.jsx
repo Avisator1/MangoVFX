@@ -22,7 +22,7 @@ const StorePromo = () => {
         style={{ y, opacity }}
       >
         <p className="neue text-[30vw] md:text-[25vw] font-[500] text-white/10 leading-none">
-          06
+          07
         </p>
       </motion.div>
 
@@ -32,7 +32,7 @@ const StorePromo = () => {
         <div className="sticky top-0 pt-32 pb-16">
           <div className="flex justify-between items-start">
             <div>
-              <p className="neue text-xl md:text-2xl font-[500]">06. STORE</p>
+              <p className="neue text-xl md:text-2xl font-[500]">07. STORE</p>
               <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight">
                 GFX<br/>MARKET
               </h1>

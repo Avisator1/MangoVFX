@@ -6,10 +6,14 @@ const Navbar = () => {
 
   const menuItems = [
     "Home",
-    "Design Process",
-    "Clients", 
-    "Testimonials",
+    "About",
+    "Process",
+    "Clients",
+    "Impact",
+    "Feedback",
+    "Community",
     "Store",
+    "Socials",
   ];
 
   return (
@@ -20,7 +24,7 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between py-5 relative z-[60]">
             {/* Left - Logo */}
-            <div className="text-xl font-[500] tracking-wide text-white">
+            <div className="text-2xl font-[500] tracking-wide text-white">
               mangofx
             </div>
 
@@ -30,18 +34,12 @@ const Navbar = () => {
             </div>
 
             {/* Right - Links */}
-            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-md tracking-wide">
-            <a href="/work" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Work
-              </a>
-            <a href="/store" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Store
-              </a>
+            <div className="hidden md:flex items-center gap-8 font-[500] text-white text-sm tracking-wide">
               <a href="/" className="hover:bg-white hover:text-black px-2 py-2 rounded-xl transition duration-150">
-                Contact
-              </a>
+                Home
+             
               <button
-                className="text-white text-md hover:underline"
+                className="text-white text-sm hover:underline"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
@@ -84,19 +82,19 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Menu Links with Staggered Animation - Truly Left Aligned */}
-            <div className="flex-1 flex items-start justify-start neue relative z-10 pt-20">
-              <div className="w-full px-8 neue">
-                <div className="space-y-2 w-full">
+            {/* Menu Links with Staggered Animation */}
+            <div className="flex-1 flex items-center neue relative z-10">
+              <div className="w-full max-w-6xl mx-auto px-8 neue">
+                <div className="space-y-1">
                   {menuItems.map((item, index) => (
                     <div 
                       key={index} 
-                      className="border-b border-gray-100/50 last:border-b-0 w-full animate-slideIn"
+                      className="border-b border-gray-100/50 last:border-b-0 animate-slideIn"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <a
-                        href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4 w-full"
+                        href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                        className="block text-4xl md:text-5xl lg:text-6xl xl:text-4xl font-[400] py-4 md:py-6 text-white hover:text-gray-300 transition-all duration-300 text-left hover:pl-4"
                         onClick={() => setMenuOpen(false)}
                       >
                         {item}
