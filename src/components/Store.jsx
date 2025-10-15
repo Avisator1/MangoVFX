@@ -120,7 +120,7 @@ const Store = () => {
                   {product.price === 0 ? "FREE" : `$${product.price.toFixed(2)}`}
                 </p>
                 <button
-                  className={`bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 ${
+                  className={`bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 rounded-xl ${
                     product.status === "coming-soon"
                       ? "opacity-50 cursor-not-allowed"
                       : ""
