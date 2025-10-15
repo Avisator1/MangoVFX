@@ -88,16 +88,16 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Version - Without mix-blend-difference */}
-          <nav className="md:hidden fixed backdrop-blur-sm bg-white/50 border border-white/10 transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] rounded-lg px-6 z-[999999]">
+          <nav className="md:hidden fixed backdrop-blur-md bg-white/20 mix-blend-difference border border-white/10 transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] rounded-lg px-6 z-[999999]">
             <div className="flex items-center justify-between py-3">
               {/* Left - Logo */}
-              <a href="/" className="text-xl font-[300] tracking-wide text-black">
+              <a href="/" className="text-xl font-[300] tracking-wide text-white">
                 mangofx
               </a>
 
               {/* Mobile Menu Toggle */}
               <button
-                className="text-black text-2xl"
+                className="text-white text-2xl"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >

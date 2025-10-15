@@ -18,108 +18,101 @@ const Navbar = () => {
 
   return (
     <div className="w-full neue">
-      {/* Desktop Navbar - With mix-blend-difference */}
+      {/* Main Navbar - Different styling for mobile vs desktop */}
       {!menuOpen && (
-        <>
-          {/* Desktop Version */}
-          <nav className="hidden md:block fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999]">
-            <div className="flex items-center justify-between py-3 relative z-[60]">
-              {/* Left - Logo */}
-              <a href="/" className="text-2xl font-[300] tracking-wide text-white">
-                mangofx
-              </a>
+        <nav className="fixed transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999]">
+          {/* Header */}
+          <div className="flex items-center justify-between py-3 relative z-[60]">
+            {/* Left - Logo */}
+            <a href="/" className="text-2xl font-[300] tracking-wide text-white mix-blend-difference">
+              mangofx
+            </a>
 
-              {/* Center - Subtitle */}
-              <div className="text-md font-[300] tracking-wide text-white absolute left-1/2 -translate-x-1/2">
-                Thumbnail Designer
-              </div>
-
-              {/* Right - Links */}
-              <div className="flex items-center gap-8 font-[300] text-white text-md tracking-wide">
-                <Link
-                  to="/"
-                  smooth
-                  className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/work"
-                  smooth
-                  className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
-                >
-                  Work
-                </Link>
-
-                <Link
-                  to="/shop"
-                  smooth
-                  className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150"
-                >
-                  Shop
-                </Link>
-
-                <Link
-                  to="https://discord.com/users/767953235616202833"
-                  smooth
-                  className="group hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 flex items-center gap-2"
-                >
-                  Contact
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 8 8"
-                    className="w-3 h-3 stroke-current"
-                    fill="none"
-                  >
-                    <path d="M7.822 0.063 L0.045 7.841" strokeWidth="0.84" />
-                    <path d="M1.961 0.063 L7.823 0.063 L7.823 5.349" strokeWidth="1.64" strokeMiterlimit="10" />
-                  </svg>
-                </Link>
-
-                <button
-                  className="text-white text-md hover:bg-white hover:text-black py-2 px-4 cursor-pointer rounded-full"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                  aria-label="Toggle Menu"
-                >
-                  Menu
-                </button>
-              </div>
+            {/* Center - Subtitle */}
+            <div className="hidden md:block text-md font-[300] tracking-wide text-white absolute left-1/2 -translate-x-1/2 mix-blend-difference">
+              Thumbnail Designer
             </div>
-          </nav>
 
-          {/* Mobile Version - Without mix-blend-difference */}
-          <nav className="md:hidden fixed backdrop-blur-sm bg-white/50 border border-white/10 transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] rounded-lg px-6 z-[999999]">
-            <div className="flex items-center justify-between py-3">
-              {/* Left - Logo */}
-              <a href="/" className="text-xl font-[300] tracking-wide text-black">
-                mangofx
-              </a>
+            {/* Right - Links - Only Home and Menu */}
+            <div className="hidden md:flex items-center gap-8 font-[300] text-white text-md tracking-wide">
+              <Link
+                to="/"
+                smooth
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 mix-blend-difference"
+              >
+                Home
+              </Link>
+              <Link
+                to="/work"
+                smooth
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 mix-blend-difference"
+              >
+                Work
+              </Link>
 
-              {/* Mobile Menu Toggle */}
+              <Link
+                to="/shop"
+                smooth
+                className="hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 mix-blend-difference"
+              >
+                Shop
+              </Link>
+
+              <Link
+                to="https://discord.com/users/767953235616202833"
+                smooth
+                className="group hover:bg-white hover:text-black px-4 py-2 rounded-full transition duration-150 flex items-center gap-2 mix-blend-difference"
+              >
+                Contact
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 8 8"
+                  className="w-3 h-3 stroke-current"
+                  fill="none"
+                >
+                  <path d="M7.822 0.063 L0.045 7.841" strokeWidth="0.84" />
+                  <path d="M1.961 0.063 L7.823 0.063 L7.823 5.349" strokeWidth="1.64" strokeMiterlimit="10" />
+                </svg>
+              </Link>
+
               <button
-                className="text-black text-2xl"
+                className="text-white text-md hover:bg-white hover:text-black py-2 px-4 cursor-pointer rounded-full mix-blend-difference"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
-                <FiMenu size={24} />
+                Menu
               </button>
             </div>
-          </nav>
-        </>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden text-white text-2xl z-[60] mix-blend-difference"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle Menu"
+            >
+              <FiMenu size={28} />
+            </button>
+          </div>
+
+          {/* Desktop Background */}
+          <div className="hidden md:block absolute inset-0 backdrop-blur-md bg-white/10 rounded-lg -z-10"></div>
+          
+          {/* Mobile Background - Only when needed */}
+          <div className="md:hidden absolute inset-0 backdrop-blur-md bg-black/80 rounded-lg -z-10"></div>
+        </nav>
       )}
 
       {/* Fullscreen Overlay Menu - With Animation */}
       {menuOpen && (
         <div className="fixed inset-0 z-[999998] flex flex-col">
-          {/* Animated Radial Blur Background - Enhanced blur effect */}
+          {/* Animated Radial Blur Background */}
           <div className="absolute inset-0 bg-black/80 backdrop-blur-3xl transition-all duration-700 ease-out animate-fadeIn">
-            {/* Radial gradient overlay for enhanced effect */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/50 to-black/80 animate-radialFade"></div>
           </div>
           
           {/* Content with Slide-in Animation */}
           <div className="relative z-10 flex flex-col h-full animate-slideUp">
-            {/* Top Bar - Higher z-index to ensure visibility */}
+            {/* Top Bar */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-gray-800/50 relative z-20">
               <div className="text-2xl font-[300] text-white">mangofx</div>
               <button
@@ -131,7 +124,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Menu Links - Vertically centered on mobile, left aligned */}
+            {/* Menu Links */}
             <div className="flex-1 flex items-center md:items-end md:mb-4 justify-start neue relative z-10 md:pt-20">
               <div className="w-full px-8 neue">
                 <div className="space-y-2 w-full">
@@ -141,8 +134,6 @@ const Navbar = () => {
                       className="border-b border-gray-100/50 last:border-b-0 w-full animate-slideIn flex items-center justify-between"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      {/* Use HashLink for all items. smooth prop ensures smooth scroll when target is on same page.
-                          HashLink also handles navigation to other routes with hashes. */}
                       <Link
                         to={item.to}
                         smooth
@@ -164,7 +155,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Add these to your global CSS or Tailwind config */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; }

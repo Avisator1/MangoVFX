@@ -97,7 +97,7 @@ const Navbar = () => {
 
               {/* Mobile Menu Toggle */}
               <button
-                className="text-black text-2xl"
+                className="text-white text-2xl"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
