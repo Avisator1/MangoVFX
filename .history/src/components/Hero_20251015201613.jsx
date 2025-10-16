@@ -107,25 +107,7 @@ function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [windowHeight, isMobile, isTablet, words.length]);
 
-  // === NEW FADE LOGIC ===
-  const getHeroOpacity = () => {
-    if (!textSectionRef.current) return 1;
-
-    const rect = textSectionRef.current.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-
-    // Start fading when the about section starts overlapping hero
-    const fadeStart = viewportHeight * 0.8;
-    // Fully faded when about section fully covers the hero
-    const fadeEnd = viewportHeight * 0.3;
-
-    if (rect.top >= fadeStart) return 1; // hero fully visible
-    if (rect.top <= fadeEnd) return 0; // fully covered
-    return (rect.top - fadeEnd) / (fadeStart - fadeEnd); // smooth fade
-  };
-
-  const heroOpacity = getHeroOpacity();
-  const shouldAboutBeOnTop = animation.sectionVisible || heroOpacity < 1;
+  const shouldAboutBeOnTop = animation.sectionVisible;
 
   return (
     <>
@@ -136,10 +118,10 @@ function Hero() {
             isMobile || isTablet ? "relative h-screen" : "fixed inset-0"
           } bg-white overflow-hidden flex items-center justify-center`}
           style={{
-            opacity: heroOpacity,
-            transition: "opacity 300ms ease-out",
+            transition: "none",
             zIndex: shouldAboutBeOnTop ? 10 : 40,
-            visibility: heroOpacity <= 0 ? "hidden" : "visible",
+            visibility: "visible",
+            opacity: 1,
           }}
         >
           {(isMobile || isTablet) ? (
@@ -181,7 +163,7 @@ function Hero() {
                   EFFECTS
                 </h2>
 
-                {/* Image container */}
+                {/* Image container - no opacity fade */}
                 <div
                   className="relative rounded-lg overflow-hidden"
                   style={{
@@ -189,8 +171,8 @@ function Hero() {
                     aspectRatio: "16 / 9",
                     transform: `scale(${scale})`,
                     transformOrigin: "center center",
-                    transition: "transform 75ms ease-out, opacity 300ms ease",
-                    opacity: heroOpacity,
+                    transition: "transform 75ms ease-out",
+                    opacity: 1,
                     zIndex: 20,
                   }}
                 >
@@ -227,6 +209,7 @@ function Hero() {
           className="w-full min-h-screen flex justify-between items-center px-4 md:px-8"
           style={{
             background: "black",
+            opacity: 1,
           }}
         >
           <div className="max-w-[112rem] mx-auto w-full flex flex-col md:flex-row">

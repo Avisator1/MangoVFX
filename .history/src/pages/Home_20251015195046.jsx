@@ -42,6 +42,7 @@ function Home() {
             <Hero />
           </div>
 
+          <div className=''>
           <Clients />
           <Statistics />
           <Testimonials />
@@ -50,6 +51,8 @@ function Home() {
           <SocialMediaSection />
           
           <Footer />
+          </div>
+
           </div>
       
         </div>

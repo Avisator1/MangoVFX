@@ -82,26 +82,7 @@ body {
 body {
   background-color: white;
 }
-
-/* Ensure smooth scrolling doesn't interfere */
-.lenis.lenis-smooth {
-  box-sizing: border-box;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-
-
-/* For most modern browsers */
-::selection {
-  background-color: #e1794a; /* Desired highlight background color */
-  color: #fff; /* Desired highlight text color */
-}
-
-
-/* Critical fix for flickering */
+/* Fix for flickering and z-index issues */
 .text-reveal-section {
   background: black !important;
   position: relative;
@@ -116,19 +97,11 @@ body {
   bottom: 0;
   background: black;
   z-index: -1;
-  pointer-events: none;
 }
 
-/* Ensure smooth scrolling doesn't interfere */
-.lenis.lenis-smooth {
-  box-sizing: border-box;
+/* For most modern browsers */
+::selection {
+  background-color: #e1794a; /* Desired highlight background color */
+  color: #fff; /* Desired highlight text color */
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-/* Remove any transform that might cause flickering */
-.text-reveal-section > div {
-  transform: none !important;
-}

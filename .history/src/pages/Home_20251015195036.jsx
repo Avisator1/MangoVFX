@@ -42,6 +42,8 @@ function Home() {
             <Hero />
           </div>
 
+          <div>
+          </div>
           <Clients />
           <Statistics />
           <Testimonials />

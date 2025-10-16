@@ -107,25 +107,21 @@ function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [windowHeight, isMobile, isTablet, words.length]);
 
-  // === NEW FADE LOGIC ===
+  // More aggressive fade out to prevent flickering
+  const fadeOutStart = (isMobile || isTablet) ? windowHeight * 0.8 : windowHeight * 1.2;
+  const fadeOutEnd = (isMobile || isTablet) ? windowHeight * 1 : windowHeight * 1.5;
+
+  // Calculate opacity with faster fade out
   const getHeroOpacity = () => {
-    if (!textSectionRef.current) return 1;
-
-    const rect = textSectionRef.current.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-
-    // Start fading when the about section starts overlapping hero
-    const fadeStart = viewportHeight * 0.8;
-    // Fully faded when about section fully covers the hero
-    const fadeEnd = viewportHeight * 0.3;
-
-    if (rect.top >= fadeStart) return 1; // hero fully visible
-    if (rect.top <= fadeEnd) return 0; // fully covered
-    return (rect.top - fadeEnd) / (fadeStart - fadeEnd); // smooth fade
+    if (scrollY <= fadeOutStart) return 1;
+    if (scrollY >= fadeOutEnd) return 0;
+    return 1 - ((scrollY - fadeOutStart) / (fadeOutEnd - fadeOutStart));
   };
 
   const heroOpacity = getHeroOpacity();
-  const shouldAboutBeOnTop = animation.sectionVisible || heroOpacity < 1;
+
+  // Determine when About section should be on top
+  const shouldAboutBeOnTop = scrollY > fadeOutStart || animation.sectionVisible;
 
   return (
     <>
@@ -137,9 +133,11 @@ function Hero() {
           } bg-white overflow-hidden flex items-center justify-center`}
           style={{
             opacity: heroOpacity,
-            transition: "opacity 300ms ease-out",
+            transition: "opacity 100ms ease",
+            pointerEvents: scrollY > fadeOutEnd ? "none" : "auto",
+            // Only show above About section when hero is visible
             zIndex: shouldAboutBeOnTop ? 10 : 40,
-            visibility: heroOpacity <= 0 ? "hidden" : "visible",
+            visibility: scrollY > fadeOutEnd ? 'hidden' : 'visible',
           }}
         >
           {(isMobile || isTablet) ? (
@@ -157,14 +155,30 @@ function Hero() {
           ) : (
             <div className="relative w-full h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center">
-                {/* Text elements - behind the image */}
+                <div
+                  className="relative rounded-lg overflow-hidden"
+                  style={{
+                    width: "clamp(300px, 40vw, 550px)",
+                    aspectRatio: "16 / 9",
+                    transform: `scale(${scale})`,
+                    transformOrigin: "center center",
+                    transition: "transform 75ms ease-out, opacity 100ms ease",
+                    opacity: heroOpacity,
+                  }}
+                >
+                  <img
+                    src={mango}
+                    alt="Visual"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
                 <h1
                   className="absolute neue font-[500] text-[#e1794a] leading-none tracking-tight text-[min(11vw,300px)]"
                   style={{
                     top: "-30%",
                     right: "35%",
                     transform: "translateY(-50%)",
-                    zIndex: 10,
                   }}
                 >
                   MANGO
@@ -175,31 +189,10 @@ function Hero() {
                     bottom: "-30%",
                     left: "35%",
                     transform: "translateY(50%)",
-                    zIndex: 10,
                   }}
                 >
                   EFFECTS
                 </h2>
-
-                {/* Image container */}
-                <div
-                  className="relative rounded-lg overflow-hidden"
-                  style={{
-                    width: "clamp(300px, 40vw, 550px)",
-                    aspectRatio: "16 / 9",
-                    transform: `scale(${scale})`,
-                    transformOrigin: "center center",
-                    transition: "transform 75ms ease-out, opacity 300ms ease",
-                    opacity: heroOpacity,
-                    zIndex: 20,
-                  }}
-                >
-                  <img
-                    src={mango}
-                    alt="Visual"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
               </div>
             </div>
           )}
@@ -209,24 +202,26 @@ function Hero() {
       {/* Spacer for non-mobile/tablet */}
       {!isMobile && !isTablet && <div className="relative z-0 h-[200vh] bg-white"></div>}
 
-      {/* Text Reveal Section */}
+      {/* Text Reveal Section - Conditionally controlled z-index */}
       <div
         className="text-reveal-section neue uppercase"
         ref={textSectionRef}
         style={{
           position: animation.isSticky ? "sticky" : "relative",
           top: 0,
+          // Only high z-index when it should be on top
           zIndex: shouldAboutBeOnTop ? 50 : 5,
-          opacity: 1,
+          opacity: animation.sectionVisible || isMobile || isTablet ? 1 : 0,
           transition: "opacity 0.3s ease, z-index 0.3s ease",
-          background: "black",
-          isolation: "isolate",
+          background: 'black',
+          isolation: 'isolate',
         }}
       >
         <div 
           className="w-full min-h-screen flex justify-between items-center px-4 md:px-8"
           style={{
-            background: "black",
+            background: 'black',
+            opacity: 1,
           }}
         >
           <div className="max-w-[112rem] mx-auto w-full flex flex-col md:flex-row">

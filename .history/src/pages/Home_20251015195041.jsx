@@ -42,14 +42,9 @@ function Home() {
             <Hero />
           </div>
 
-          <Clients />
-          <Statistics />
-          <Testimonials />
-          <PatreonPromo />
-          <StorePromo />
-          <SocialMediaSection />
-          
-          <Footer />
+          <div>
+          </div>
+
           </div>
       
         </div>
