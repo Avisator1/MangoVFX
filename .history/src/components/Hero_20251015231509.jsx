@@ -130,9 +130,9 @@ function Hero() {
     const rect = textSectionRef.current.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
 
-    // Text fades much quicker - more aggressive values
-    const fadeStart = viewportHeight * 0.9; // Start fading much earlier
-    const fadeEnd = viewportHeight * 0.6; // End fading much earlier
+    // Text fades quicker - adjusted values
+    const fadeStart = viewportHeight * 0.7; // Start fading earlier
+    const fadeEnd = viewportHeight * 0.4; // End fading earlier
 
     if (rect.top >= fadeStart) return 1; // text fully visible
     if (rect.top <= fadeEnd) return 0; // fully covered
@@ -182,7 +182,7 @@ function Hero() {
                     transform: "translateY(-50%)",
                     zIndex: 10,
                     opacity: textOpacity, // Apply quicker fade to text
-                    transition: "opacity 100ms ease-out", // Much faster transition for text
+                    transition: "opacity 200ms ease-out", // Faster transition for text
                   }}
                 >
                   MANGO
@@ -195,7 +195,7 @@ function Hero() {
                     transform: "translateY(50%)",
                     zIndex: 10,
                     opacity: textOpacity, // Apply quicker fade to text
-                    transition: "opacity 100ms ease-out", // Much faster transition for text
+                    transition: "opacity 200ms ease-out", // Faster transition for text
                   }}
                 >
                   EFFECTS
