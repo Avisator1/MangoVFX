@@ -271,7 +271,7 @@ function Hero() {
             </div>
 
             <div className="self-end mb-[0.75rem] mt-8 md:mt-0">
-              <a href="https://discord.com/users/767953235616202833" className="bg-[#e1794a] text-white px-6 py-4 md:px-4 md:py-3 neue rounded-lg font-[500] cursor-pointer">
+              <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/767953235616202833" className="bg-[#e1794a] text-white px-6 py-4 md:px-4 md:py-3 neue rounded-lg font-[500] cursor-pointer">
                 CONTACT ME
               </a>
             </div>
