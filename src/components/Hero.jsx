@@ -22,7 +22,7 @@ function Hero() {
   }, [animation]);
 
   const words =
-    "I design VISUALS THAT DEMAND ATTENTION. Every project is built to spark curiosity and fuel growth for creators to stand out.".split(" ");
+    "I design visuals that demand attention, spark curiosity, and fuel growth for creators who defy the ordinary.".split(" ");
 
   useEffect(() => {
     const handleResize = () => {
