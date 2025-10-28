@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="w-full py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-sm font-medium uppercase text-black/80 border-t border-gray-200">
          
 
-          <p>© 2025 Mango</p>
+          <p>© 2025 Mangofx, All Rights Reserved</p>
 
          
 
