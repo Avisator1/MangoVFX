@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { HashLink as Link } from "react-router-hash-link";
+import imageLogo from "../assets/images/image.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,8 +26,8 @@ const Navbar = () => {
           <nav className="hidden md:block fixed mix-blend-difference backdrop-blur-md transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] max-w-[112rem] rounded-lg px-8 z-[999999]">
             <div className="flex items-center justify-between py-3 relative z-[60]">
               {/* Left - Logo */}
-              <a href="/" className="text-2xl font-[300] tracking-wide text-white">
-                mangofx
+              <a href="/" className="flex items-center">
+                <img src={imageLogo} alt="mangofx" className="h-8 w-auto" />
               </a>
 
               {/* Center - Subtitle */}
@@ -91,8 +92,8 @@ const Navbar = () => {
           <nav className="md:hidden fixed backdrop-blur-sm bg-white/50 border border-white/10 transition-all duration-500 top-2 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] rounded-lg px-6 z-[999999]">
             <div className="flex items-center justify-between py-3">
               {/* Left - Logo */}
-              <a href="/" className="text-xl font-[300] tracking-wide text-black">
-                mangofx
+              <a href="/" className="flex items-center">
+                <img src={imageLogo} alt="mangofx" className="h-6 w-auto" />
               </a>
 
               {/* Mobile Menu Toggle */}
@@ -121,7 +122,9 @@ const Navbar = () => {
           <div className="relative z-10 flex flex-col h-full animate-slideUp">
             {/* Top Bar - Higher z-index to ensure visibility */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-gray-800/50 relative z-20">
-              <div className="text-2xl font-[300] text-white">mangofx</div>
+              <div className="flex items-center">
+                <img src={imageLogo} alt="mangofx" className="h-8 w-auto" />
+              </div>
               <button
                 className="text-white text-2xl hover:text-gray-300 transition-colors"
                 onClick={() => setMenuOpen(false)}
