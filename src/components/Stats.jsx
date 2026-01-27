@@ -51,15 +51,15 @@ const Statistics = () => {
 
   const formatLabel = (val, type) => {
     if (type === 'views') return `${Math.floor(val)}M+`;
-    if (type === 'likes') return `${Math.floor(val)}K+`;
+    if (type === 'likes') return `${Math.floor(val)}M+`;
     if (type === 'orders') return `${Math.floor(val)}+`;
     return `${Math.floor(val)}`;
   };
 
   const stats = [
-    { value: 700, label: 'LIKES', type: 'likes', format: (v) => formatLabel(v, 'likes') },
-    { value: 47, label: 'VIEWS', type: 'views', format: (v) => formatLabel(v, 'views') },
-    { value: 400, label: 'ORDERS', type: 'orders', format: (v) => formatLabel(v, 'thumbnails') },
+    { value: 1.1, label: 'LIKES', type: 'likes', format: (v) => formatLabel(v, 'likes') },
+    { value: 54, label: 'VIEWS', type: 'views', format: (v) => formatLabel(v, 'views') },
+    { value: 400, label: 'ORDERS', type: 'orders', format: (v) => formatLabel(v, 'orders') },
   ];
 
   return (
