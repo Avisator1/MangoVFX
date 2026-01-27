@@ -59,7 +59,7 @@ const Statistics = () => {
   const stats = [
     { value: 950, label: 'LIKES', type: 'likes', format: (v) => formatLabel(v, 'likes') },
     { value: 54, label: 'VIEWS', type: 'views', format: (v) => formatLabel(v, 'views') },
-    { value: 400, label: 'ORDERS', type: 'orders', format: (v) => formatLabel(v, 'orders') },
+    { value: 400, label: 'THUMBNAILS', type: 'orders', format: (v) => formatLabel(v, 'orders') },
   ];
 
   return (
