@@ -22,7 +22,6 @@ const Clients = () => {
     { name: "Artualcm", subs: 0.147, logo: "https://yt3.ggpht.com/0xoPZV5afD_Mj9zQsNhgGLwoE6QuIIz5dwx9ETcetdHkbdRDzPMjk0p_Akj8USpmPzoHxM-YCg=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Dewier", subs: 0.141, logo: "https://yt3.ggpht.com/Y0SqgAfWP4u-sDcaqU_0uIQGeCkQbLxWGT7StAIyF2zCkHm7JEs-1zEG9k5Nd2H5zfGVHYvvNOc=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Dannyisdahbomb", subs: 0.107, logo: "https://yt3.ggpht.com/7j_KXPOKkDOoBDkdjMVe0uykZyhnPk3V7lOXmsEj0n-Z4PAQlvzmIOUiZErIiXMQBnxuzkp4=s176-c-k-c0x00ffffff-no-rj-mo" },
-    { name: "jakejxke", subs: 0.107, logo: "https://yt3.ggpht.com/eTw7DpC5iXNBXwAx8r7PzZ4WBziUAgMmjrs2U1-mzgXaFpnhrpkdYvccilrU49IDB0sbWRR-hQ=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "ricefarmer11", subs: 0.102, logo: "https://yt3.ggpht.com/-Y8sTK9Eig7O3myBqq1qTI601FK7UA3m_HFtHtQwpRA_cYfD4kTATTbpAhoiG7pumY9PIYUKcA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "beentaken", subs: 0.101, logo: "https://yt3.ggpht.com/LxYNmWGz0_W8sXdDb3_kkejSUb370wp9KvwwrPqgy7MmCeDZ8uVZFynuYw-J3Kac-zJ4KP4fmA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Tryhard", subs: 0.0953, logo: "https://yt3.ggpht.com/F5NUUwbvaOde0GEJD3SUaaG9GdADkf78BHeM5YpQDvh1DlkLyhxRs1wr3VZz6ZNlRpvOhvoPHkg=s176-c-k-c0x00ffffff-no-rj-mo" },
@@ -88,7 +87,7 @@ const Clients = () => {
               onClick={() => setShowAll(!showAll)}
               className="neue bg-[#e1794a] text-white px-8 py-3 font-[500] text-[4vw] sm:text-[2.5vw] md:text-[1.1vw] uppercase tracking-wide hover:scale-105 transition rounded-xl  duration-200"
             >
-              {showAll ? 'VIEW LESS' : 'VIEW MORE (+16)'}
+              {showAll ? 'VIEW LESS' : 'VIEW MORE (+19)'}
             </button>
           </div>
         )}
