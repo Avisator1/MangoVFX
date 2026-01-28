@@ -15,6 +15,11 @@ import twelve from '../assets/thumbnails/12.png';
 import thirteen from '../assets/thumbnails/13.png';
 import fourteen from '../assets/thumbnails/14.png';
 import fifteen from '../assets/thumbnails/15.png';
+import sixteen from '../assets/thumbnails/16.png';
+import seventeen from '../assets/thumbnails/17.png';
+import eighteen from '../assets/thumbnails/18.png';
+import nineteen from '../assets/thumbnails/19.png';
+import twenty from '../assets/thumbnails/20.png';
 
 const ThumbnailPortfolio = () => {
   const [sortBy, setSortBy] = useState("date"); // "date" or "views"
@@ -35,7 +40,12 @@ const ThumbnailPortfolio = () => {
     { id: 12, imageUrl: twelve, views: null, date: new Date("2025-06-5"), youtubeUrl: null },
     { id: 13, imageUrl: thirteen, views: "1.23K", date: new Date("2025-07-15"), youtubeUrl: "https://www.youtube.com/watch?v=6LzvppbX2qs&ab_channel=Flux" },
     { id: 14, imageUrl: fourteen, views: "1.6K", date: new Date("2024-012-1"), youtubeUrl: "https://www.youtube.com/watch?v=0ON7w8rCVhI&ab_channel=Pyrocelot" },
-    { id: 15, imageUrl: fifteen, views: "801", date: new Date("2024-05-27"), youtubeUrl: "https://www.youtube.com/watch?v=dRWj6fK2V_U&ab_channel=Cowarted" }
+    { id: 15, imageUrl: fifteen, views: "801", date: new Date("2024-05-27"), youtubeUrl: "https://www.youtube.com/watch?v=dRWj6fK2V_U&ab_channel=Cowarted" },
+    { id: 16, imageUrl: sixteen, views: "1.2M", date: new Date("2026-01-23"), youtubeUrl: "https://youtu.be/p3xIY9NsFS0?si=3kmU7o-svy3N4sh3" },
+    { id: 17, imageUrl: seventeen, views: "4.5K", date: new Date("2025-10-20"), youtubeUrl: "https://youtu.be/hhOoge2rKmM?si=iS4AIMamgEqmSRVE" },
+    { id: 18, imageUrl: eighteen, views: "947K", date: new Date("2025-06-27"), youtubeUrl: "https://youtu.be/-rKW4oYNqeU?si=in5skA3Qzyvrc1U9" },
+    { id: 19, imageUrl: nineteen, views: "794K", date: new Date("2024-05-27"), youtubeUrl: "https://youtu.be/KJtp7x_cJPo?si=c0tM9byaaY9K3pYh" },
+    { id: 20, imageUrl: twenty, views: "1.12M", date: new Date("2024-05-27"), youtubeUrl: "https://youtu.be/hBZqlRjT8Kw?si=Qh1yPdgpmFgGFOX2" }
   ];
 
   // Sort thumbnails based on selected option
