@@ -20,6 +20,11 @@ import seventeen from '../assets/thumbnails/17.png';
 import eighteen from '../assets/thumbnails/18.png';
 import nineteen from '../assets/thumbnails/19.png';
 import twenty from '../assets/thumbnails/20.png';
+import twentyone from '../assets/thumbnails/21.png';
+import twentytwo from '../assets/thumbnails/22.png';
+import twentythree from '../assets/thumbnails/23.png';
+import twentyfour from '../assets/thumbnails/24.png';
+import twentyfive from '../assets/thumbnails/25.png';
 
 const ThumbnailPortfolio = () => {
   const [sortBy, setSortBy] = useState("date"); // "date" or "views"
@@ -33,7 +38,7 @@ const ThumbnailPortfolio = () => {
     { id: 5, imageUrl: five, views: null, date: new Date("2025-07-25"), youtubeUrl: null },
     { id: 6, imageUrl: six, views: "1.03K", date: new Date("2024-06-14"), youtubeUrl: "https://www.youtube.com/watch?v=tyjXC6tuuBo&ab_channel=Cowarted" },
     { id: 7, imageUrl: seven, views: null, date: new Date("2025-04-30"), youtubeUrl: null },
-    { id: 8, imageUrl: eight, views: "1.34M", date: new Date("2025-04-8"), youtubeUrl: "https://www.youtube.com/watch?v=7qDVO_fnyR4&ab_channel=Kiply" },
+    { id: 8, imageUrl: eight, views: "2.14M", date: new Date("2025-04-8"), youtubeUrl: "https://www.youtube.com/watch?v=7qDVO_fnyR4&ab_channel=Kiply" },
     { id: 9, imageUrl: nine, views: null, date: new Date("2024-06-14"), youtubeUrl: null },
     { id: 10, imageUrl: ten, views: "2.34K", date: new Date("2024-07-27"), youtubeUrl: "https://www.youtube.com/watch?v=xbYmVQF37pk&ab_channel=VireLock" },
     { id: 11, imageUrl: eleven, views: null, date: new Date("2025-02-18"), youtubeUrl: null },
@@ -45,7 +50,12 @@ const ThumbnailPortfolio = () => {
     { id: 17, imageUrl: seventeen, views: "4.5K", date: new Date("2025-10-20"), youtubeUrl: "https://youtu.be/hhOoge2rKmM?si=iS4AIMamgEqmSRVE" },
     { id: 18, imageUrl: eighteen, views: "947K", date: new Date("2025-08-22"), youtubeUrl: "https://youtu.be/-rKW4oYNqeU?si=in5skA3Qzyvrc1U9" },
     { id: 19, imageUrl: nineteen, views: "794K", date: new Date("2025-06-27"), youtubeUrl: "https://youtu.be/KJtp7x_cJPo?si=c0tM9byaaY9K3pYh" },
-    { id: 20, imageUrl: twenty, views: "1.12M", date: new Date("2025-04-25"), youtubeUrl: "https://youtu.be/hBZqlRjT8Kw?si=Qh1yPdgpmFgGFOX2" }
+    { id: 20, imageUrl: twenty, views: "1.12M", date: new Date("2025-04-25"), youtubeUrl: "https://youtu.be/hBZqlRjT8Kw?si=Qh1yPdgpmFgGFOX2" },
+    { id: 21, imageUrl: twentyone, views: "3.48M", date: new Date("2025-10-21"), youtubeUrl: "https://www.youtube.com/watch?v=T6clGMmtBiU" },
+    { id: 22, imageUrl: twentytwo, views: "1.01M", date: new Date("2025-06-25"), youtubeUrl: "https://www.youtube.com/watch?v=4gMqXPfnaOM" },
+    { id: 23, imageUrl: twentythree, views: "669K", date: new Date("2024-07-1"), youtubeUrl: "https://youtu.be/yNb5aj4GaRk?si=S4rr33nv2ROz3pdC" },
+    { id: 24, imageUrl: twentyfour, views: null, date: new Date("2024-06-25"), youtubeUrl: null },
+    { id: 25, imageUrl: twentyfive, views: null, date: new Date("2025-10-29"), youtubeUrl: "https://youtu.be/n81BE7zkuXI?si=OdK0SHOqMyQGUX44" }
   ];
 
   // Sort thumbnails based on selected option
