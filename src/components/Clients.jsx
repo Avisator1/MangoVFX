@@ -31,7 +31,6 @@ const Clients = () => {
     { name: "Laqqy", subs: 0.0279, logo: "https://yt3.ggpht.com/JxdA3tgCNYoArQcs7f8ElObU-30SUaVb8i-BXliDwR27A87ER50-uo-SQyP9MeHfoBs9biwsO30=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "DumbisDumb", subs: 0.0223, logo: "https://yt3.ggpht.com/YOrrCjhXM3gNRqgZ_Ro-wzPemEipwNIK0O0E-XC8PWlDoJE4IroZ-CiF6mo6nYgsSYfuz_lV7g=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Swight", subs: 0.153, logo: "https://yt3.googleusercontent.com/shuSNP3dT3CADaBMCvXAVF5hnIZjGN8de-Vysc9CAmEdRKGpR05GJZz3FFDpB5kN9OOmLjac8so=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "Swight", subs: 0.153, logo: "https://yt3.googleusercontent.com/shuSNP3dT3CADaBMCvXAVF5hnIZjGN8de-Vysc9CAmEdRKGpR05GJZz3FFDpB5kN9OOmLjac8so=s160-c-k-c0x00ffffff-no-rj" },
     { name: "Baablu", subs: 0.638, logo: "https://yt3.googleusercontent.com/Q5IvoENHmXbCKnANK5BOisU81ljq_DdNOO30b67XuVJRuB2j_8Otqls3zNNLLFmJU2CTMzFidw=s160-c-k-c0x00ffffff-no-rj" }
   ].sort((a, b) => b.subs - a.subs); // Sort by highest subs first
 
