@@ -4,6 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import Home from './pages/Home'
 import StorePage from './pages/StorePage'
 import Work from './pages/Work'
+import ProductPage from './pages/ProductPage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/shop" element={<StorePage />} />
+          <Route path="/shop/:productSlug" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
     </ReactLenis>
