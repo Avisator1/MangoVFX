@@ -6,8 +6,7 @@ import { products } from "../data/products";
 const Store = () => {
   const navigate = useNavigate();
 
-  const handleOpenProduct = (slug, isDisabled) => {
-    if (isDisabled) return;
+  const goToProduct = (slug) => {
     navigate(`/shop/${slug}`);
   };
 
@@ -41,9 +40,7 @@ const Store = () => {
               className={`border border-black p-8 py-12 rounded-xl hover:bg-[#e1794a] hover:text-white transition-colors duration-300 group relative cursor-pointer ${
                 product.status === "coming-soon" ? "opacity-75" : ""
               }`}
-              onClick={() =>
-                handleOpenProduct(product.slug, product.status === "coming-soon")
-              }
+              onClick={() => goToProduct(product.slug)}
             >
               {product.status === "coming-soon" && (
                 <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 neue font-[500] text-sm rounded-full">
@@ -74,21 +71,13 @@ const Store = () => {
                 </p>
                 <button
                   type="button"
-                  className={`bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 rounded-xl ${
-                    product.status === "coming-soon"
-                      ? "opacity-50 cursor-not-allowed"
-                      : ""
-                  }`}
+                  className="bg-black text-white px-6 py-3 neue font-[500] group-hover:bg-white group-hover:text-black transition-colors duration-300 rounded-xl"
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleOpenProduct(
-                      product.slug,
-                      product.status === "coming-soon"
-                    );
+                    goToProduct(product.slug);
                   }}
-                  disabled={product.status === "coming-soon"}
                 >
-                  {product.status === "coming-soon" ? "UNAVAILABLE" : "VIEW DETAILS"}
+                  VIEW DETAILS
                 </button>
               </div>
             </motion.div>
