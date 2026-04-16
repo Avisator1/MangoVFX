@@ -200,11 +200,11 @@ const ThumbnailPortfolio = () => {
             <p className="neue text-xl uppercase tracking-wider">Thumbnails</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">54M+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">70M+</p>
             <p className="neue text-xl uppercase tracking-wider">Total Views</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">950K+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">1.44M+</p>
             <p className="neue text-xl uppercase tracking-wider">Likes</p>
           </div>
           <div className="text-center">
