@@ -33,7 +33,7 @@ const PatreonPromo = () => {
           <div className="">
             <p className="neue text-xl md:text-2xl font-[500] text-[#f5d6c7] text-right">05. COMMUNITY</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight text-right">
-              PATREON<br/>PERKS
+              MANGOFX'S<br/>TREE
             </h1>
           </div>
         </div>
@@ -49,20 +49,18 @@ const PatreonPromo = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <h2 className="neue text-4xl md:text-6xl font-[500] tracking-tight">
-              Why Join
+              Stop guessing how good thumbnails are made.
             </h2>
             <p className="neue text-xl md:text-2xl leading-relaxed">
-              Your support directly fuels new effect development and helps me create 
-              resources for the entire creator community.
+              Level up your thumbnails with specially curated, exclusive resources. 
             </p>
             
             <div className="pt-8 space-y-6">
               {[
-                "Gain access to exclusive project files from real projects",
-                "Monthly design techniques & composition tips",
-                "Acess to 1:1 communication & guidance",
-                "Monthly design breakdowns",
-                "Private Discord community"
+                "Monthly PSDs",
+                "Monthly Asset Packs",
+                "Monthly Design Breakdowns",
+                "1:1 Thumbnail Critique"
                 
               ].map((item, i) => (
                 <div key={i} className="flex items-start border-b border-white/10 pb-6">
@@ -83,22 +81,25 @@ const PatreonPromo = () => {
           >
             <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-xl backdrop-blur-sm">
               <h3 className="neue text-3xl md:text-4xl font-[500] mb-6 tracking-tight">
-                Ready to upgrade<br/>your visuals?
+                Ready to stop<br/>guessing?
               </h3>
               
-              <motion.div
+              <motion.a
+                href="https://patreon.com/cw/mangofx"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ 
                   backgroundColor: "#e1794a",
                   color: "#ffffff"
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block border-2 border-[#e1794a] px-12 py-4 rounded-full neue font-[500] text-xl transition-colors duration-300 cursor-not-allowed opacity-70"
+                className="inline-block border-2 border-[#e1794a] px-12 py-4 rounded-full neue font-[500] text-xl transition-colors duration-300 cursor-pointer"
               >
-                COMING SOON
-              </motion.div>
+                Enter the Process
+              </motion.a>
 
               <p className="neue text-lg mt-8 opacity-70">
-                Cancel anytime · Exclusive content · Direct support
+                Cancel anytime
               </p>
             </div>
           </motion.div>
