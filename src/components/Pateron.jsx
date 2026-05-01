@@ -33,7 +33,7 @@ const PatreonPromo = () => {
           <div className="">
             <p className="neue text-xl md:text-2xl font-[500] text-[#f5d6c7] text-right">05. COMMUNITY</p>
             <h1 className="neue text-[12vw] md:text-[10vw] font-[500] leading-none tracking-tight text-right">
-              MANGOFX'S<br/>TREE
+              MANGO'S<br/>TREE
             </h1>
           </div>
         </div>
@@ -81,7 +81,7 @@ const PatreonPromo = () => {
           >
             <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-xl backdrop-blur-sm">
               <h3 className="neue text-3xl md:text-4xl font-[500] mb-6 tracking-tight">
-                Ready to stop<br/>guessing?
+                Ready to stop guessing?
               </h3>
               
               <motion.a
