@@ -165,12 +165,14 @@ const ThumbnailPortfolio = () => {
           >
             Newest First
           </button>
+          {/*
           <button
             onClick={() => setSortBy("views")}
             className={`neue px-4 py-2 rounded-md ${sortBy === "views" ? "bg-[#e1794a] text-white" : "bg-gray-100"}`}
           >
             Most Views
           </button>
+          */}
         </div>
       </div>
 
