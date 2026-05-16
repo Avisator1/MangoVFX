@@ -25,6 +25,20 @@ import twentytwo from '../assets/thumbnails/22.png';
 import twentythree from '../assets/thumbnails/23.png';
 import twentyfour from '../assets/thumbnails/24.png';
 import twentyfive from '../assets/thumbnails/25.png';
+import twentysix from '../assets/thumbnails/26.png';
+import twentyseven from '../assets/thumbnails/27.png';
+import twentyeight from '../assets/thumbnails/28.png';
+import twentynine from '../assets/thumbnails/29.png';
+import thirty from '../assets/thumbnails/30.png';
+import thirtyone from '../assets/thumbnails/31.png';
+import thirtytwo from '../assets/thumbnails/32.png';
+import thirtythree from '../assets/thumbnails/33.png';
+import thirtyfour from '../assets/thumbnails/34.png';
+import thirtyfive from '../assets/thumbnails/35.png';
+import thirtysix from '../assets/thumbnails/36.png';
+import thirtyseven from '../assets/thumbnails/37.png';
+import thirtyeight from '../assets/thumbnails/38.png';
+import thirtynine from '../assets/thumbnails/39.png';
 
 const ThumbnailPortfolio = () => {
   const [sortBy, setSortBy] = useState("date"); // "date" or "views"
@@ -55,7 +69,21 @@ const ThumbnailPortfolio = () => {
     { id: 22, imageUrl: twentytwo, views: "1.01M", date: new Date("2025-06-25"), youtubeUrl: "https://www.youtube.com/watch?v=4gMqXPfnaOM" },
     { id: 23, imageUrl: twentythree, views: "669K", date: new Date("2024-07-1"), youtubeUrl: "https://youtu.be/yNb5aj4GaRk?si=S4rr33nv2ROz3pdC" },
     { id: 24, imageUrl: twentyfour, views: null, date: new Date("2024-06-25"), youtubeUrl: null },
-    { id: 25, imageUrl: twentyfive, views: null, date: new Date("2025-10-29"), youtubeUrl: "https://youtu.be/n81BE7zkuXI?si=OdK0SHOqMyQGUX44" }
+    { id: 25, imageUrl: twentyfive, views: null, date: new Date("2025-10-29"), youtubeUrl: "https://youtu.be/n81BE7zkuXI?si=OdK0SHOqMyQGUX44" },
+    { id: 26, imageUrl: twentysix, views: null, date: new Date("2026-01-1"), youtubeUrl: "https://youtu.be/n81BE7zkuXI?si=OdK0SHOqMyQGUX44" },
+    { id: 27, imageUrl: twentyseven, views: null, date: new Date("2026-01-5"), youtubeUrl: null },
+    { id: 28, imageUrl: twentyeight, views: null, date: new Date("2026-02-01"), youtubeUrl: null },
+    { id: 29, imageUrl: twentynine, views: null, date: new Date("2026-02-03"), youtubeUrl: null },
+    { id: 30, imageUrl: thirty, views: null, date: new Date("2026-03-29"), youtubeUrl: null },
+    { id: 31, imageUrl: thirtyone, views: null, date: new Date("2026-02-02"), youtubeUrl: null },
+    { id: 32, imageUrl: thirtytwo, views: null, date: new Date("2026-03-27"), youtubeUrl: null },
+    { id: 33, imageUrl: thirtytree, views: null, date: new Date("2026-03-28"), youtubeUrl: null },
+    { id: 34, imageUrl: thirtyfour, views: null, date: new Date("2026-04-02"), youtubeUrl: null },
+    { id: 35, imageUrl: thirtyfive, views: null, date: new Date("2026-04-03"), youtubeUrl: null },
+    { id: 36, imageUrl: thirtysix, views: null, date: new Date("2026-04-01"), youtubeUrl: null },
+    { id: 37, imageUrl: thirtyseven, views: null, date: new Date("2026-05-15"), youtubeUrl: null },
+    { id: 38, imageUrl: thirtyeight, views: null, date: new Date("2026-05-13"), youtubeUrl: null },
+    { id: 39, imageUrl: thirtynine, views: null, date: new Date("2026-05-14"), youtubeUrl: null }
   ];
 
   // Sort thumbnails based on selected option
@@ -158,7 +186,7 @@ const ThumbnailPortfolio = () => {
               transition={{ duration: 0.6 }}
               className="relative group"
             >
-              {/* View Count Badge - Improved styling */}
+              {/*
               <div 
                 onClick={(e) => handleViewCountClick(e, thumbnail)}
                 className={`
@@ -170,6 +198,7 @@ const ThumbnailPortfolio = () => {
                 <span className="mr-1">{thumbnail.views ? "👁️" : "🖌️"}</span>
                 <span>{thumbnail.views ? thumbnail.views : "Practice"}</span>
               </div>
+              */}
               
               {/* Date Badge */}
               <div className="absolute top-4 right-4 bg-white/90 text-black px-2 py-1 neue font-[500] text-xs z-10 rounded-md shadow">
