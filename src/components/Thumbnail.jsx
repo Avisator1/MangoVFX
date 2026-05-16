@@ -77,7 +77,7 @@ const ThumbnailPortfolio = () => {
     { id: 30, imageUrl: thirty, views: null, date: new Date("2026-03-29"), youtubeUrl: null },
     { id: 31, imageUrl: thirtyone, views: null, date: new Date("2026-02-02"), youtubeUrl: null },
     { id: 32, imageUrl: thirtytwo, views: null, date: new Date("2026-03-27"), youtubeUrl: null },
-    { id: 33, imageUrl: thirtytree, views: null, date: new Date("2026-03-28"), youtubeUrl: null },
+    { id: 33, imageUrl: thirtythree, views: null, date: new Date("2026-03-28"), youtubeUrl: null },
     { id: 34, imageUrl: thirtyfour, views: null, date: new Date("2026-04-02"), youtubeUrl: null },
     { id: 35, imageUrl: thirtyfive, views: null, date: new Date("2026-04-03"), youtubeUrl: null },
     { id: 36, imageUrl: thirtysix, views: null, date: new Date("2026-04-01"), youtubeUrl: null },
