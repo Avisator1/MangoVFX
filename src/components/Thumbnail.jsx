@@ -155,7 +155,7 @@ const ThumbnailPortfolio = () => {
         </div>
       </div>
 
-      {/* Sorting Controls */}
+      {/* Sorting Controls 
       <div className="max-w-[112rem] mx-auto px-4 mb-8">
         <div className="flex items-center space-x-4">
           <p className="neue text-lg">Sort by:</p>
@@ -165,6 +165,7 @@ const ThumbnailPortfolio = () => {
           >
             Newest First
           </button>
+          */}
           {/*
           <button
             onClick={() => setSortBy("views")}
