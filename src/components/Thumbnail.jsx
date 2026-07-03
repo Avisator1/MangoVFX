@@ -177,27 +177,32 @@ const ThumbnailPortfolio = () => {
         </div>
       </div>
 
-      {/* Sorting Controls 
-      <div className="max-w-[112rem] mx-auto px-4 mb-8">
-        <div className="flex items-center space-x-4">
-          <p className="neue text-lg">Sort by:</p>
-          <button
-            onClick={() => setSortBy("date")}
-            className={`neue px-4 py-2 rounded-md ${sortBy === "date" ? "bg-[#e1794a] text-white" : "bg-gray-100"}`}
-          >
-            Newest First
-          </button>
-          */}
-          {/*
-          <button
-            onClick={() => setSortBy("views")}
-            className={`neue px-4 py-2 rounded-md ${sortBy === "views" ? "bg-[#e1794a] text-white" : "bg-gray-100"}`}
-          >
-            Most Views
-          </button>
-          */}
+         {/* Sorting Controls disabled for now */}
+      {false && (
+        <div className="max-w-[112rem] mx-auto px-4 mb-8">
+          <div className="flex items-center space-x-4">
+            <p className="neue text-lg">Sort by:</p>
+
+            <button
+              onClick={() => setSortBy("date")}
+              className={`neue px-4 py-2 rounded-md ${
+                sortBy === "date" ? "bg-[#e1794a] text-white" : "bg-gray-100"
+              }`}
+            >
+              Newest First
+            </button>
+
+            <button
+              onClick={() => setSortBy("views")}
+              className={`neue px-4 py-2 rounded-md ${
+                sortBy === "views" ? "bg-[#e1794a] text-white" : "bg-gray-100"
+              }`}
+            >
+              Most Views
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Thumbnail Grid */}
       <div className="max-w-[112rem] mx-auto px-4 pb-32">
