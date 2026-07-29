@@ -255,15 +255,15 @@ const ThumbnailPortfolio = () => {
         {/* Stats Section */}
         <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-black pt-12">
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">400+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">500+</p>
             <p className="neue text-xl uppercase tracking-wider">Thumbnails</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">70M+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">117M+</p>
             <p className="neue text-xl uppercase tracking-wider">Total Views</p>
           </div>
           <div className="text-center">
-            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">1.4M+</p>
+            <p className="neue text-[10vw] md:text-[6vw] font-[500] leading-none">2.8M+</p>
             <p className="neue text-xl uppercase tracking-wider">Likes</p>
           </div>
           <div className="text-center">
