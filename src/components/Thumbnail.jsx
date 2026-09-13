@@ -50,16 +50,16 @@ import fortyseven from '../assets/thumbnails/47.png';
 import fortyeight from '../assets/thumbnails/48.png';
 import fortynine from '../assets/thumbnails/49.png';
 import fifty from '../assets/thumbnails/50.png';
-import fiftyone from '../assets/thumbnails/50.png';
-import fiftytwo from '../assets/thumbnails/50.png';
-import fiftythree from '../assets/thumbnails/50.png';
-import fiftyfour from '../assets/thumbnails/50.png';
-import fiftyfive from '../assets/thumbnails/50.png';
-import fiftysix from '../assets/thumbnails/50.png';
-import fiftyseven from '../assets/thumbnails/50.png';
-import fiftyeight from '../assets/thumbnails/50.png';
-import fiftynine from '../assets/thumbnails/50.png';
-import sixty from '../assets/thumbnails/50.png';
+import fiftyone from '../assets/thumbnails/51.png';
+import fiftytwo from '../assets/thumbnails/52.png';
+import fiftythree from '../assets/thumbnails/53.png';
+import fiftyfour from '../assets/thumbnails/54.png';
+import fiftyfive from '../assets/thumbnails/55.png';
+import fiftysix from '../assets/thumbnails/56.png';
+import fiftyseven from '../assets/thumbnails/57.png';
+import fiftyeight from '../assets/thumbnails/58.png';
+import fiftynine from '../assets/thumbnails/59.png';
+import sixty from '../assets/thumbnails/60.png';
 
 const ThumbnailPortfolio = () => {
   const [sortBy, setSortBy] = useState("date"); // "date" or "views"
