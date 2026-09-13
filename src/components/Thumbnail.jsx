@@ -50,6 +50,16 @@ import fortyseven from '../assets/thumbnails/47.png';
 import fortyeight from '../assets/thumbnails/48.png';
 import fortynine from '../assets/thumbnails/49.png';
 import fifty from '../assets/thumbnails/50.png';
+import fiftyone from '../assets/thumbnails/50.png';
+import fiftytwo from '../assets/thumbnails/50.png';
+import fiftythree from '../assets/thumbnails/50.png';
+import fiftyfour from '../assets/thumbnails/50.png';
+import fiftyfive from '../assets/thumbnails/50.png';
+import fiftysix from '../assets/thumbnails/50.png';
+import fiftyseven from '../assets/thumbnails/50.png';
+import fiftyeight from '../assets/thumbnails/50.png';
+import fiftynine from '../assets/thumbnails/50.png';
+import sixty from '../assets/thumbnails/50.png';
 
 const ThumbnailPortfolio = () => {
   const [sortBy, setSortBy] = useState("date"); // "date" or "views"
@@ -105,7 +115,17 @@ const ThumbnailPortfolio = () => {
     { id: 47, imageUrl: fortyseven, views: null, date: new Date("2026-06-07"), youtubeUrl: null },
     { id: 48, imageUrl: fortyeight, views: null, date: new Date("2026-06-15"), youtubeUrl: null },
     { id: 49, imageUrl: fortynine, views: null, date: new Date("2026-06-20"), youtubeUrl: null },
-    { id: 50, imageUrl: fifty, views: null, date: new Date("2026-06-24"), youtubeUrl: null }
+    { id: 50, imageUrl: fifty, views: null, date: new Date("2026-06-24"), youtubeUrl: null },
+    { id: 51, imageUrl: fiftyone, views: null, date: new Date("2026-07-06"), youtubeUrl: null },
+    { id: 52, imageUrl: fiftytwo, views: null, date: new Date("2026-07-09"), youtubeUrl: null },
+    { id: 53, imageUrl: fiftythree, views: null, date: new Date("2026-07-21"), youtubeUrl: null },
+    { id: 54, imageUrl: fiftyfour, views: null, date: new Date("2026-07-22"), youtubeUrl: null },
+    { id: 55, imageUrl: fiftyfive, views: null, date: new Date("2026-07-27"), youtubeUrl: null },
+    { id: 56, imageUrl: fiftysix, views: null, date: new Date("2026-08-05"), youtubeUrl: null },
+    { id: 57, imageUrl: fiftyseven, views: null, date: new Date("2026-08-09"), youtubeUrl: null },
+    { id: 58, imageUrl: fiftyeight, views: null, date: new Date("2026-08-14"), youtubeUrl: null },
+    { id: 59, imageUrl: fiftynine, views: null, date: new Date("2026-08-15"), youtubeUrl: null },
+    { id: 60, imageUrl: sixty, views: null, date: new Date("2026-09-11"), youtubeUrl: null }
   ];
 
   // Sort thumbnails based on selected option
