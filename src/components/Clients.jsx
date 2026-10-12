@@ -13,9 +13,9 @@ const Clients = () => {
     { name: "ImShiba", subs: 1.57, logo: "https://yt3.ggpht.com/PVagyycNfhyFkhSvY82FjILFCt1qwLG1zAYl-lGg1ywzAZELM9ALLvLT9F0OuQszSBpLK1hm8BM=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Notvixios", subs: 2.24, logo: "https://yt3.ggpht.com/LCci3yzrf7mXofG5FN4QFfHEpDxV6_I3tL_2z2qVijXy6Rj_Ac12CGxb3xzQxUCkWOSuNKmmVxk=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "DrDonut", subs: 1.94, logo: "https://yt3.ggpht.com/9_wcgCUByYB_Q0-aDMRmpQOcYGdcHdhT858dJlfVZbMalvhnSMMx8eci24qCWURq-birNw71=s176-c-k-c0x00ffffff-no-rj-mo" },
-    { name: "Flamefrags", subs: 2.36, logo: "https://yt3.ggpht.com/18z7udGc2e2xtDRvTh853r7Tm_R8iUdKiIAIFXPQEEzYhjbTdPOYqWdj5XcZS7kS9GKvAPZUXw=s176-c-k-c0x00ffffff-no-rj-mo" },
+    { name: "Flamefrags", subs: 3.01, logo: "https://yt3.ggpht.com/18z7udGc2e2xtDRvTh853r7Tm_R8iUdKiIAIFXPQEEzYhjbTdPOYqWdj5XcZS7kS9GKvAPZUXw=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "InFamousJJ", subs: 0.307, logo: "https://yt3.ggpht.com/SNRMQV-y4CnCAicGqmERMg4YOS4ejg8Z8u8EwpyEud3j9Dif9YCEbNwvrDESNn255-smBIS4=s176-c-k-c0x00ffffff-no-rj-mo" },
-    { name: "Sharpness", subs: 0.848, logo: "https://yt3.googleusercontent.com/ytc/AIdro_nm36JZ4nDxTYx2z-XO4M4c5NFLiZqyqTWDavCy73CSpUQ=s176-c-k-c0x00ffffff-no-rj-mo" },
+    { name: "Sharpness", subs: 0.983, logo: "https://yt3.googleusercontent.com/ytc/AIdro_nm36JZ4nDxTYx2z-XO4M4c5NFLiZqyqTWDavCy73CSpUQ=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Unsorted guy", subs: 0.422, logo: "https://yt3.ggpht.com/EPFA-GwRzb5N2I3eztSQurxWHJZOdiXatvhcRPJPWFgFuY1keiOYojgAUeO6q-UcC3wryFp3Vw=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Intel Edits", subs: 0.355, logo: "https://yt3.ggpht.com/35UoRqUv7gcxjH4h3rKLuk_AB5u3RWRLvIDAl_kndLYwJlji-fSpSU1N6_p03qTLzjdSHLAwHw=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Krustydavid", subs: 0.181, logo: "https://yt3.ggpht.com/q0Tmok06qCLdoE7JqGuyiBW8rY15E_pO1i4JYhfJlKKFXaVFxMmTeOZXpa_8IksPGIzQqabzuQ=s176-c-k-c0x00ffffff-no-rj-mo" },
@@ -25,14 +25,17 @@ const Clients = () => {
     { name: "ricefarmer11", subs: 0.102, logo: "https://yt3.ggpht.com/-Y8sTK9Eig7O3myBqq1qTI601FK7UA3m_HFtHtQwpRA_cYfD4kTATTbpAhoiG7pumY9PIYUKcA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Tryhard", subs: 0.0953, logo: "https://yt3.ggpht.com/F5NUUwbvaOde0GEJD3SUaaG9GdADkf78BHeM5YpQDvh1DlkLyhxRs1wr3VZz6ZNlRpvOhvoPHkg=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Jooonah", subs: 0.103, logo: "https://yt3.ggpht.com/3L5YBKzzjM3t_fEPcsJ7umkCNoQkWkUFw9piOEJDgHUV0KenVDe8JJyOzTEf_UZWILSDtVtKNUw=s176-c-k-c0x00ffffff-no-rj-mo" },
-    { name: "Tai", subs: 0.0917, logo: "https://yt3.ggpht.com/Ed01sVs8RuxTu_5dosZphDQl502jL_PN5601kvrfWBzrtAbYugOhp0eAVbFyha7eec34T6xoNA=s176-c-k-c0x00ffffff-no-rj-mo" },
+    { name: "Tai", subs: 0.151, logo: "https://yt3.ggpht.com/Ed01sVs8RuxTu_5dosZphDQl502jL_PN5601kvrfWBzrtAbYugOhp0eAVbFyha7eec34T6xoNA=s176-c-k-c0x00ffffff-no-rj-mo" },
     { name: "Jamsteo", subs: 0.137, logo: "https://yt3.googleusercontent.com/ytc/AIdro_nqc2jgdJjiroNRBShgbMSpPofP0Butz_p4LstM2LBmqfA=s160-c-k-c0x00ffffff-no-rj"},
-    { name: "Swight", subs: 0.241, logo: "https://yt3.googleusercontent.com/shuSNP3dT3CADaBMCvXAVF5hnIZjGN8de-Vysc9CAmEdRKGpR05GJZz3FFDpB5kN9OOmLjac8so=s160-c-k-c0x00ffffff-no-rj" },
+    { name: "Swight", subs: 0.341, logo: "https://yt3.googleusercontent.com/shuSNP3dT3CADaBMCvXAVF5hnIZjGN8de-Vysc9CAmEdRKGpR05GJZz3FFDpB5kN9OOmLjac8so=s160-c-k-c0x00ffffff-no-rj" },
     { name: "Baablu", subs: 0.638, logo: "https://yt3.googleusercontent.com/Q5IvoENHmXbCKnANK5BOisU81ljq_DdNOO30b67XuVJRuB2j_8Otqls3zNNLLFmJU2CTMzFidw=s160-c-k-c0x00ffffff-no-rj" },
     { name: "Bionic", subs: 8.62, logo: "https://yt3.googleusercontent.com/5DmBxSoHaXUzRrbzm3w9VIgTRw-pBN08isnmTK_0pKZUZ_6tRMRRCHsmqhXrgu9FYdNwYUvr=s160-c-k-c0x00ffffff-no-rj" },
     { name: "SB737+", subs: 0.784, logo: "https://yt3.googleusercontent.com/SCO1spWY9AHVprDODnUMdPTeoWXMAZ8xfAVueh4w81h9e_a-zV4mjLBhEwQC8SoGtB376IgGnQ=s160-c-k-c0x00ffffff-no-rj" },
     { name: "roshambogames", subs: 0.473, logo: "https://yt3.googleusercontent.com/ytc/AIdro_kWl_UvNoAEWJASJBkfeDuF0uyDloqR72S2zrtcqbahWEY=s160-c-k-c0x00ffffff-no-rj" },
     { name: "Marlow", subs: 0.403, logo: "https://yt3.googleusercontent.com/8ViJi8I60j49O5IsJORbrogO5miu-S8ZaKArd25GtCVl34OmUrqKZMAhaRADkcAAHsQiSIe0ma4=s160-c-k-c0x00ffffff-no-rj" },
+    { name: "ManePear", subs: 1.14, logo: "https://yt3.googleusercontent.com/w9zrHNeirDtZ78kEjc5-ml_LKmR0LMq3-uUIDzp5svtjflel9sxs4s-Od3ydCOjN8Hx12zGVsw=s160-c-k-c0x00ffffff-no-rj" },
+    { name: "aCookieGod", subs: 8.13, logo: "https://yt3.googleusercontent.com/LRSOZjCXnsmbpkbxWdCNQOW_XbnIk9pTkf0pE2ML5pGukr2QKTkd-rqRk7jzURt0y31T-1_OM18=s160-c-k-c0x00ffffff-no-rj" },
+    { name: "Daiazal", subs: 0.457, logo: "https://yt3.googleusercontent.com/YfDC8nP0E4f5o3pORa06AmyODZAvr7mI7nfmGNgSjUr1LlA-euyCPi_Gkqt-AsqVRg15qDpn0Q=s160-c-k-c0x00ffffff-no-rj" }
   ].sort((a, b) => b.subs - a.subs); // Sort by highest subs first
 
   const visibleClients = showAll ? clients : clients.slice(0, 8);
